@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hand Simulation — Sign Language Glove</title>
+  <link rel="stylesheet" href="mophong1.css" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">🖐️</span>
+        <span class="logo-text">Hand<span>Simulator</span></span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="status-pill">
+        <span class="dot dot-gray" id="connDot"></span>
+        <span id="connLabel">Python: ngắt kết nối</span>
+      </div>
+      <div class="status-pill">
+        <span class="label">Transport</span>
+        <span class="value" id="transportLabel">WebSocket</span>
+      </div>
+      <div class="status-pill">
+        <span class="label">Mode</span>
+        <span class="value" id="modeLabel">AI Python</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-ghost" id="btnSound" title="Bật/tắt giọng nói khi gập ngón trỏ/giữa">🔊 Giọng nói</button>
+      <button class="btn btn-ghost" id="btnTheme" title="Đổi màu nền phong cách mẫu">🎨 Màu nền</button>
+      <button class="btn btn-ghost" id="btnScreenshot" title="Chụp ảnh 3D">📸 Chụp ảnh</button>
+      <button class="btn btn-ghost" id="btnReset">↺ Reset</button>
+      <button class="btn btn-ghost" id="btnFullscreen">⛶</button>
+    </div>
+  </header>
+
+  <!-- ================= LAYOUT ================= -->
+  <div class="layout">
+
+    <!-- ============ 3D CANVAS ============ -->
+    <div class="canvas-wrap">
+      <canvas id="canvas"></canvas>
+
+      <!-- Prediction overlay -->
+      <div class="overlay-prediction">
+        <div class="pred-label">PREDICTION</div>
+        <div class="pred-value" id="prediction">Chưa nhận diện</div>
+        <div class="pred-confidence" id="confidence">conf: —</div>
+        <div class="pose-status" id="poseStatus">3D: chờ dữ liệu cảm biến</div>
+      </div>
+
+      <!-- Live JSON overlay -->
+      <div class="overlay-json">
+        <div class="json-title">Dữ liệu cảm biến gốc</div>
+        <pre id="jsonView">{
+  "thumb": "0.00",
+  "Index": "0.00",
+  "Middle": "0.00",
+  "Ring": "0.00",
+  "Pinky": "0.00",
+  "gyroX": "0.75",
+  "gyroY": "0.75",
+  "gyroZ": "0.75"
+}</pre>
+      </div>
+
+      <!-- Loading -->
+      <div class="loading" id="loading">Đang khởi tạo 3D…</div>
+    </div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+
+      <!-- CONNECTION -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Kết nối AI Python</h3>
+          <span class="hint" id="connState">idle</span>
+        </div>
+
+        <div class="conn-row" id="connWsRow">
+          <label>URL</label>
+          <input type="text" id="connWsUrl" value="ws://localhost:8765" spellcheck="false" />
+        </div>
+
+        <div class="conn-help" id="connHelp">ESP32 → Python → Web. Nếu Python chạy trên máy khác, nhập địa chỉ WebSocket của máy đó.</div>
+        <p class="connection-detail" id="esp32Label">ESP32: chưa kết nối</p>
+        <p class="connection-detail" id="aiStateLabel">Chờ Python</p>
+        <p class="conn-help" id="bridgeMessage">Chạy wifi_ai.py rồi bấm Kết nối.</p>
+
+        <div class="btn-group" style="margin-top:8px">
+          <button class="btn btn-primary" id="btnConnect">🔌 Kết nối</button>
+          <button class="btn btn-ghost" id="btnDisconnect" disabled>Ngắt</button>
+        </div>
+
+        <div class="conn-stats">
+          <span>pkts: <b id="connPkts">0</b></span>
+          <span>rate: <b id="connRate">0</b>/s</span>
+        </div>
+      </section>
+
+      <section class="panel" id="recognitionDiagnostics">
+        <div class="panel-head"><h3>Nhận diện và giọng nói</h3></div>
+        <p class="conn-help" id="aiRawLabel">AI đang đoán: chờ kết quả</p>
+        <p class="conn-help" id="aiDecision">Chờ kết nối Python.</p>
+        <p class="conn-help" id="aiSampleLag"></p>
+        <div class="conn-row">
+          <label for="englishVoiceSelect">Giọng Anh</label>
+          <select id="englishVoiceSelect"><option value="">Đang tìm giọng tiếng Anh…</option></select>
+        </div>
+        <p class="conn-help" id="englishVoiceStatus">Đang tải danh sách giọng đọc…</p>
+        <button class="btn btn-ghost btn-mini" id="btnReloadVoices">Tải lại giọng</button>
+        <p class="conn-help" id="speechStatus" role="status">Chưa phát câu nào.</p>
+        <p class="conn-help" id="playbackStatus" role="status">Chờ cử chỉ mới.</p>
+        <div class="btn-group">
+          <button class="btn btn-primary btn-mini" id="btnRetryGesture" hidden>Thử lại lời đọc</button>
+          <button class="btn btn-ghost btn-mini" id="btnSkipGesture" hidden>Bỏ qua cử chỉ</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-ghost btn-mini" id="btnTestSpeech">Thử loa</button>
+          <button class="btn btn-primary btn-mini" id="btnReplaySpeech" disabled>Đọc lại kết quả</button>
+        </div>
+        <p class="conn-help">Xin chào → Hello. Cảm ơn nhiều → Thank you very much. Mỗi cử chỉ được nhận sẽ phát lại đoạn tay 3D đã ghi và lời đọc; xong cả hai mới tới cử chỉ tiếp theo. Để lặp lại cùng cử chỉ, về tư thế nghỉ đến khi AI nhận tư thế nghỉ.</p>
+      </section>
+
+      <section class="panel" id="liveCalibration">
+        <div class="panel-head"><h3>Cảm biến uốn tự động</h3></div>
+        <div class="conn-row">
+          <label for="flexMode">Mốc 3D</label>
+          <select id="flexMode"><option value="auto">Tự động (khuyên dùng)</option><option value="manual">Tự ghi mốc duỗi / gập</option></select>
+        </div>
+        <div class="conn-row">
+          <label for="flexMapping">flex1</label>
+          <select id="flexMapping"><option value="Index">Ngón trỏ (flex2 → giữa)</option><option value="Middle">Ngón giữa (flex2 → trỏ)</option></select>
+        </div>
+        <div id="manualCalibration" hidden>
+        <div class="btn-group" style="margin-top:8px">
+          <button class="btn btn-primary btn-mini" id="btnFlexOpen">1. Ghi khi duỗi</button>
+          <button class="btn btn-primary btn-mini" id="btnFlexClosed">2. Ghi khi gập</button>
+          <button class="btn btn-ghost btn-mini" id="btnFlexReset">Xóa mốc cũ</button>
+        </div>
+        <p class="conn-help">Giữ yên khi ghi mỗi mốc (~0,8 giây). Dùng khi thay cảm biến hoặc mốc tự động chưa phù hợp.</p>
+        </div>
+        <p class="conn-help" id="calibrationStatus"></p>
+        <p class="conn-help" id="calibrationValues"></p>
+        <p class="conn-help" id="flexLiveValues">ADC hiện tại: chờ cảm biến</p>
+        <p class="conn-help">Độ gập 3D là ước lượng từ cảm biến. Các mốc chỉ điều chỉnh hình ảnh; dữ liệu AI giữ nguyên.</p>
+      </section>
+
+      <!-- MODEL SETTINGS -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Mô hình bàn tay</h3>
+          <span class="hint" id="fingerLenHint">+12%</span>
+        </div>
+
+        <div class="slider-row">
+          <label>📏 Dài ngón</label>
+          <input type="range" id="sliderFingerLength" min="1.00" max="1.35" step="0.01" value="1.12" />
+          <span class="val" id="fingerLenVal">1.12×</span>
+        </div>
+      </section>
+
+      <!-- FLEX SLIDERS (chỉ dùng khi test offline) -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Độ gập trên mô hình</h3>
+          <span class="hint">0.00 – 1.50</span>
+        </div>
+        <p class="conn-help" id="sensorHint">2 ngón thật; Cái / Áp út / Út mô phỏng duỗi</p>
+
+        <div class="slider-row" data-sensor="thumb">
+          <label title="Mô phỏng duỗi; chưa có cảm biến">👍 Cái · mô phỏng</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0" />
+          <span class="val">0.00</span>
+        </div>
+
+        <div class="slider-row" data-sensor="Index">
+          <label>☝️ Index</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0" />
+          <span class="val">0.00</span>
+        </div>
+
+        <div class="slider-row" data-sensor="Middle">
+          <label>🖕 Middle</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0" />
+          <span class="val">0.00</span>
+        </div>
+
+        <div class="slider-row" data-sensor="Ring">
+          <label title="Mô phỏng duỗi; chưa có cảm biến">💍 Áp út · mô phỏng</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0" />
+          <span class="val">0.00</span>
+        </div>
+
+        <div class="slider-row" data-sensor="Pinky">
+          <label title="Mô phỏng duỗi; chưa có cảm biến">🤙 Út · mô phỏng</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0" />
+          <span class="val">0.00</span>
+        </div>
+      </section>
+
+      <!-- IMU -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>MPU6050</h3>
+          <button class="btn btn-mini" id="btnCalibrate">Đặt hướng trung tính</button>
+        </div>
+
+        <div class="imu-grid">
+          <div class="imu-cell"><span>Gyro X · rad/s</span><b id="gxVal">—</b></div>
+          <div class="imu-cell"><span>Gyro Y · rad/s</span><b id="gyVal">—</b></div>
+          <div class="imu-cell"><span>Gyro Z · rad/s</span><b id="gzVal">—</b></div>
+          <div class="imu-cell"><span>Accel X · m/s²</span><b id="axVal">—</b></div>
+          <div class="imu-cell"><span>Accel Y · m/s²</span><b id="ayVal">—</b></div>
+          <div class="imu-cell"><span>Accel Z · m/s²</span><b id="azVal">—</b></div>
+        </div>
+        <p class="conn-help">Roll/pitch ước lượng từ gia tốc + gyro. Yaw tích phân có thể trôi; đặt lại hướng khi cần. Trục phụ thuộc cách gắn MPU6050.</p>
+
+        <div class="slider-row" data-imu="gyroX" data-demo-only hidden>
+          <label>Tilt X</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0.75" />
+        </div>
+        <div class="slider-row" data-imu="gyroY" data-demo-only hidden>
+          <label>Tilt Y</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0.75" />
+        </div>
+        <div class="slider-row" data-imu="gyroZ" data-demo-only hidden>
+          <label>Tilt Z</label>
+          <input type="range" min="0" max="1.5" step="0.01" value="0.75" />
+        </div>
+      </section>
+
+      <!-- AI CLASSIFIER (K-NN) -->
+      <section class="panel" id="panelKNN">
+        <div class="panel-head">
+          <h3>Nhận diện cử chỉ</h3>
+          <span class="hint" id="knnStatusBadge">Chờ Python</span>
+        </div>
+
+        <div class="knn-stats">
+          <div class="knn-stat-box">
+            <span>PREDICT</span>
+            <b id="knnResultLabel">Chưa nhận diện</b>
+          </div>
+          <div class="knn-stat-box">
+            <span>CONFIDENCE</span>
+            <b id="knnConfVal">0%</b>
+          </div>
+        </div>
+
+        <div class="knn-bar-wrap">
+          <div class="knn-bar" id="knnConfBar" style="width: 0%"></div>
+        </div>
+
+        <div class="conn-row" style="margin-top: 6px;">
+          <label>Nguồn AI</label>
+          <select id="knnEngineSelect">
+            <option value="python" selected>AI Python · găng tay thật</option>
+            <option value="knn_web">DEMO offline · K-NN / tư thế mẫu</option>
+          </select>
+        </div>
+
+        <div class="conn-row" style="margin-top: 4px;" data-demo-only hidden>
+          <label>Số sensor</label>
+          <select id="knnSensorMode">
+            <option value="2" selected>2 Ngón thật (Trỏ + Giữa)</option>
+            <option value="5">5 Ngón đầy đủ (Mở rộng)</option>
+          </select>
+        </div>
+
+        <div style="margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 8px;" data-demo-only hidden>
+          <div style="font-size: 11px; font-weight: 600; color: var(--text-dim); margin-bottom: 6px;">
+            🎓 MẪU DEMO K-NN CỤC BỘ (không huấn luyện AI Python)
+          </div>
+          <div class="conn-row">
+            <label>Nhãn</label>
+            <select id="trainGestureSelect">
+              <option value="HELLO">HELLO (Trỏ cong)</option>
+              <option value="GOODBYE">GOODBYE (Giữa cong)</option>
+              <option value="CUONG">CUONG (Giữa cong + ngửa tay)</option>
+              <option value="NICE">NICE (Cả 2 cong)</option>
+              <option value="REST">REST (Duỗi thẳng)</option>
+              <option value="CUSTOM">+ Tự đặt tên mới...</option>
+            </select>
+          </div>
+          <div class="conn-row" id="customGestureRow" style="display: none; margin-top: 4px;">
+            <label>Tên</label>
+            <input type="text" id="customGestureName" placeholder="VD: THANK_YOU" />
+          </div>
+
+          <div class="btn-group" style="margin-top: 8px;">
+            <button class="btn btn-primary btn-mini" id="btnRecordSample" title="Lấy dữ liệu hiện tại làm 1 mẫu học cho nhãn đã chọn">📸 Ghi mẫu</button>
+            <button class="btn btn-ghost btn-mini" id="btnResetDataset" title="Khôi phục tập mẫu mặc định">↺ Reset</button>
+            <button class="btn btn-ghost btn-mini" id="btnExportDataset" title="Tải file JSON dataset về máy">💾 Xuất JSON</button>
+          </div>
+          <div id="knnSampleCounts" style="margin-top: 8px; font-family: var(--mono); font-size: 10px; line-height: 1.5;"></div>
+        </div>
+      </section>
+
+      <!-- PRESETS -->
+      <section class="panel" data-demo-only hidden>
+        <div class="panel-head">
+          <h3>Preset Gestures</h3>
+        </div>
+        <div class="preset-grid" id="presetGrid"></div>
+      </section>
+
+      <!-- STREAM (mock) -->
+      <section class="panel" data-demo-only hidden>
+        <div class="panel-head">
+          <h3>Live Stream (Mock)</h3>
+          <span class="hint" id="streamStatus">paused</span>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btnStream">▶ Bắt đầu stream</button>
+          <button class="btn btn-ghost" id="btnAutoOrbit">🔄 Auto orbit</button>
+        </div>
+      </section>
+
+      <!-- LOG -->
+      <section class="panel">
+        <div class="panel-head">
+          <h3>Event Log</h3>
+          <button class="btn btn-mini" id="btnClearLog">Clear</button>
+        </div>
+        <div class="log" id="log"></div>
+      </section>
+
+    </aside>
+  </div>
+
+  <script>
+    /* Nạp script tuần tự. Mỗi mục có nhiều đường dẫn dự phòng (file local -> CDN). */
+    (function () {
+      const CDN = "https://cdn.jsdelivr.net/npm/three@0.128.0/";
+      const chain = [
+        { req: true,  src: ["three.min.js", "three_min.js", CDN + "build/three.min.js"] },
+        { req: true,  src: ["OrbitControls.js", CDN + "examples/js/controls/OrbitControls.js"] },
+        { req: true,  src: ["GLTFLoader.js", CDN + "examples/js/loaders/GLTFLoader.js"] },
+        { req: true,  src: ["OutlineEffect.js", CDN + "examples/js/effects/OutlineEffect.js"] },
+        { req: false, src: ["handModelData.js"] },   // dự phòng cho hand.glb, không bắt buộc
+        { req: true,  src: ["hand-bridge.js"] },
+        { req: true,  src: ["hand-connection.js"] },
+        { req: true,  src: ["mophong1.js"] },
+      ];
+      function loadOne(cands, i, done) {
+        if (i >= cands.length) return done(false);
+        const s = document.createElement("script");
+        s.src = cands[i];
+        s.onload = () => done(true);
+        s.onerror = () => { s.remove(); loadOne(cands, i + 1, done); };
+        document.body.appendChild(s);
+      }
+      function step(n) {
+        if (n >= chain.length) return;
+        loadOne(chain[n].src, 0, (ok) => {
+          if (!ok && chain[n].req) {
+            const el = document.getElementById("loading");
+            if (el) { el.textContent = "Không nạp được: " + chain[n].src[0]; el.style.color = "#ef4444"; }
+            console.error("Load failed:", chain[n].src);
+            return;
+          }
+          step(n + 1);
+        });
+      }
+      step(0);
+    })();
+  </script>
+</body>
+
+</html>

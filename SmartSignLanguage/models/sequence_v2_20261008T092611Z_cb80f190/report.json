@@ -1,0 +1,286 @@
+{
+  "evaluation_scope": "within_session_trial_holdout",
+  "warning": "Demo only: labels cannot be evaluated in separate sessions. Trial holdout shares recording sessions with training; scores do not establish performance on a new glove session.",
+  "seed": 42,
+  "motion_checks": "classifier-only",
+  "trial_counts": {
+    "TRO_TRAI_DUOI": 15,
+    "GIUA_TRAI_DUOI": 15,
+    "TRO_PHAI_DUOI": 15,
+    "NONE": 30
+  },
+  "session_counts": {
+    "20261008T085318Z_7fe4b9f7": {
+      "TRO_TRAI_DUOI": 15,
+      "GIUA_TRAI_DUOI": 15,
+      "TRO_PHAI_DUOI": 15,
+      "NONE": 20
+    },
+    "20261008T091911Z_fde986ec": {
+      "NONE": 10
+    }
+  },
+  "train_keys": [
+    "20261008T085318Z_7fe4b9f7/29",
+    "20261008T085318Z_7fe4b9f7/31",
+    "20261008T085318Z_7fe4b9f7/51",
+    "20261008T085318Z_7fe4b9f7/49",
+    "20261008T085318Z_7fe4b9f7/41",
+    "20261008T085318Z_7fe4b9f7/24",
+    "20261008T085318Z_7fe4b9f7/59",
+    "20261008T085318Z_7fe4b9f7/44",
+    "20261008T085318Z_7fe4b9f7/27",
+    "20261008T091911Z_fde986ec/8",
+    "20261008T085318Z_7fe4b9f7/45",
+    "20261008T085318Z_7fe4b9f7/35",
+    "20261008T085318Z_7fe4b9f7/62",
+    "20261008T085318Z_7fe4b9f7/15",
+    "20261008T085318Z_7fe4b9f7/4",
+    "20261008T091911Z_fde986ec/5",
+    "20261008T085318Z_7fe4b9f7/9",
+    "20261008T085318Z_7fe4b9f7/21",
+    "20261008T085318Z_7fe4b9f7/14",
+    "20261008T085318Z_7fe4b9f7/40",
+    "20261008T085318Z_7fe4b9f7/16",
+    "20261008T085318Z_7fe4b9f7/56",
+    "20261008T085318Z_7fe4b9f7/60",
+    "20261008T091911Z_fde986ec/10",
+    "20261008T085318Z_7fe4b9f7/23",
+    "20261008T091911Z_fde986ec/3",
+    "20261008T085318Z_7fe4b9f7/11",
+    "20261008T091911Z_fde986ec/6",
+    "20261008T085318Z_7fe4b9f7/2",
+    "20261008T085318Z_7fe4b9f7/42",
+    "20261008T085318Z_7fe4b9f7/30",
+    "20261008T085318Z_7fe4b9f7/18",
+    "20261008T085318Z_7fe4b9f7/33",
+    "20261008T085318Z_7fe4b9f7/25",
+    "20261008T085318Z_7fe4b9f7/10",
+    "20261008T085318Z_7fe4b9f7/64",
+    "20261008T085318Z_7fe4b9f7/55",
+    "20261008T085318Z_7fe4b9f7/1",
+    "20261008T085318Z_7fe4b9f7/63",
+    "20261008T085318Z_7fe4b9f7/3",
+    "20261008T085318Z_7fe4b9f7/50",
+    "20261008T085318Z_7fe4b9f7/52",
+    "20261008T085318Z_7fe4b9f7/38",
+    "20261008T085318Z_7fe4b9f7/58",
+    "20261008T085318Z_7fe4b9f7/6",
+    "20261008T085318Z_7fe4b9f7/17",
+    "20261008T091911Z_fde986ec/7",
+    "20261008T085318Z_7fe4b9f7/5",
+    "20261008T085318Z_7fe4b9f7/46",
+    "20261008T085318Z_7fe4b9f7/54",
+    "20261008T085318Z_7fe4b9f7/36",
+    "20261008T085318Z_7fe4b9f7/20",
+    "20261008T085318Z_7fe4b9f7/57",
+    "20261008T085318Z_7fe4b9f7/43",
+    "20261008T085318Z_7fe4b9f7/61",
+    "20261008T085318Z_7fe4b9f7/65"
+  ],
+  "test_keys": [
+    "20261008T085318Z_7fe4b9f7/53",
+    "20261008T085318Z_7fe4b9f7/28",
+    "20261008T085318Z_7fe4b9f7/22",
+    "20261008T091911Z_fde986ec/2",
+    "20261008T085318Z_7fe4b9f7/34",
+    "20261008T085318Z_7fe4b9f7/32",
+    "20261008T085318Z_7fe4b9f7/47",
+    "20261008T085318Z_7fe4b9f7/48",
+    "20261008T091911Z_fde986ec/1",
+    "20261008T091911Z_fde986ec/4",
+    "20261008T085318Z_7fe4b9f7/8",
+    "20261008T085318Z_7fe4b9f7/12",
+    "20261008T085318Z_7fe4b9f7/13",
+    "20261008T085318Z_7fe4b9f7/37",
+    "20261008T085318Z_7fe4b9f7/39",
+    "20261008T091911Z_fde986ec/9",
+    "20261008T085318Z_7fe4b9f7/7",
+    "20261008T085318Z_7fe4b9f7/26",
+    "20261008T085318Z_7fe4b9f7/19"
+  ],
+  "accuracy": 0.9473684210526315,
+  "classifier_accuracy_before_motion_checks": 0.9473684210526315,
+  "balanced_accuracy": 0.9375,
+  "labels": [
+    "GIUA_TRAI_DUOI",
+    "NONE",
+    "TRO_PHAI_DUOI",
+    "TRO_TRAI_DUOI"
+  ],
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      7,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      4
+    ]
+  ],
+  "classification": {
+    "GIUA_TRAI_DUOI": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1-score": 0.8571428571428571,
+      "support": 4.0
+    },
+    "NONE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 7.0
+    },
+    "TRO_PHAI_DUOI": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 4.0
+    },
+    "TRO_TRAI_DUOI": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1-score": 0.8888888888888888,
+      "support": 4.0
+    },
+    "accuracy": 0.9473684210526315,
+    "macro avg": {
+      "precision": 0.95,
+      "recall": 0.9375,
+      "f1-score": 0.9365079365079365,
+      "support": 19.0
+    },
+    "weighted avg": {
+      "precision": 0.9578947368421052,
+      "recall": 0.9473684210526315,
+      "f1-score": 0.9465329991645781,
+      "support": 19.0
+    }
+  },
+  "predictions": [
+    {
+      "key": "20261008T085318Z_7fe4b9f7/53",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/28",
+      "actual": "GIUA_TRAI_DUOI",
+      "predicted": "GIUA_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/22",
+      "actual": "GIUA_TRAI_DUOI",
+      "predicted": "GIUA_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T091911Z_fde986ec/2",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/34",
+      "actual": "TRO_PHAI_DUOI",
+      "predicted": "TRO_PHAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/32",
+      "actual": "TRO_PHAI_DUOI",
+      "predicted": "TRO_PHAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/47",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/48",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T091911Z_fde986ec/1",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T091911Z_fde986ec/4",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/8",
+      "actual": "TRO_TRAI_DUOI",
+      "predicted": "TRO_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/12",
+      "actual": "TRO_TRAI_DUOI",
+      "predicted": "TRO_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/13",
+      "actual": "TRO_TRAI_DUOI",
+      "predicted": "TRO_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/37",
+      "actual": "TRO_PHAI_DUOI",
+      "predicted": "TRO_PHAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/39",
+      "actual": "TRO_PHAI_DUOI",
+      "predicted": "TRO_PHAI_DUOI"
+    },
+    {
+      "key": "20261008T091911Z_fde986ec/9",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/7",
+      "actual": "TRO_TRAI_DUOI",
+      "predicted": "TRO_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/26",
+      "actual": "GIUA_TRAI_DUOI",
+      "predicted": "TRO_TRAI_DUOI"
+    },
+    {
+      "key": "20261008T085318Z_7fe4b9f7/19",
+      "actual": "GIUA_TRAI_DUOI",
+      "predicted": "GIUA_TRAI_DUOI"
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_v2\\20261008T085318Z_7fe4b9f7\\samples.csv",
+      "sha256": "a2edbde4926f17455ff7e0bdfba00dc2fccc0c43340e114b9382ffefec76034b",
+      "reference_sha256": "35da67d4684a84240d401b130027cef32b0c9cf93e08b2dad1a50102fe62c235"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_v2\\20261008T091911Z_fde986ec\\samples.csv",
+      "sha256": "cc2ac39269c439194d47e354858961c262762aa5f9c2e930f6dc526aeee95323",
+      "reference_sha256": "1481f6edb770b3492976de9b97653e8b055375b176fefbfc5805bea51c983ff6"
+    }
+  ],
+  "skipped_empty_files": []
+}

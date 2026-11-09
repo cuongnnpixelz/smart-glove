@@ -1,0 +1,206 @@
+﻿Báo Cáo Găng Tay Thông Minh
+https://gemini.google.com/app/fdfc745005844858
+
+
+User prompt: từ các thông tin trên và file mẫu báo cáo đồ án bạn hãy viết lại sao cho phù hợp với project của tôi
+Response: Bản thảo báo cáo Đồ án Tốt nghiệp dưới đây được biên soạn theo đúng bố cục chuẩn của Khoa Điện – Điện tử, Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng từ file mẫu, đồng thời tích hợp toàn bộ thông số kỹ thuật, thuật toán xử lý tín hiệu số (DSP) và mô hình học máy AIoT từ dự án Găng tay thông minh nhận diện ngôn ngữ ký hiệu của bạn.
+TRANG BÌA VÀ TRANG PHỤ BÌA
+ĐẠI HỌC ĐÀ NẴNG TRƯỜNG ĐẠI HỌC SƯ PHẠM KỸ THUẬT KHOA ĐIỆN – ĐIỆN TỬ
+ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC
+* Ngành: Công nghệ Kỹ thuật Điện tử - Viễn thông.
+* Chuyên ngành: Điện tử Máy tính.
+* Đề tài: Thiết kế và xây dựng hệ thống găng tay thông minh hỗ trợ giao tiếp cho người khiếm thính dựa trên công nghệ AIoT (Smart Sign Language Glove).
+* Người hướng dẫn: [Điền tên Giảng viên hướng dẫn].
+* Sinh viên thực hiện: [Điền tên Sinh viên thực hiện].
+* Mã sinh viên: [Điền Mã sinh viên].
+* Lớp: [Điền Lớp].
+Đà Nẵng, năm 2026
+TÓM TẮT
+* Tên đề tài: Thiết kế và xây dựng hệ thống găng tay thông minh hỗ trợ giao tiếp cho người khiếm thính dựa trên công nghệ AIoT (Smart Sign Language Glove).
+* Nội dung tóm tắt: Đồ án nghiên cứu, thiết kế và xây dựng hệ thống găng tay thông minh thu thập dữ liệu chuyển động cơ học của 5 ngón tay và tư thế cổ tay theo thời gian thực nhằm hỗ trợ giao tiếp cho người khiếm thính. Trước khi đi vào thiết kế chi tiết, báo cáo trình bày tổng quan về thực trạng giao tiếp bằng ngôn ngữ ký hiệu và các giải pháp găng tay thông minh trên thế giới. Hệ thống ứng dụng vi điều khiển ESP32, cảm biến uốn (Flex Sensors), cảm biến quán tính MPU6050 kết hợp chuỗi thuật toán xử lý tín hiệu số (DSP) và mô hình học máy Support Vector Machine (SVM) để nhận diện liên tục 26 ký hiệu, tự động ghép từ thành câu và xuất kết quả ra màn hình LCD 1602, giao diện Web 3D cùng giọng nói tiếng Việt (Text-to-Speech).
+LỜI NÓI ĐẦU
+Để hoàn thành đề tài Đồ án Tốt nghiệp này, nhóm thực hiện xin gửi lời cảm ơn chân thành đến quý Thầy, Cô giáo trong Khoa Điện – Điện tử, Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng đã truyền đạt những kiến thức chuyên môn quý báu và tạo điều kiện thuận lợi trong suốt quá trình học tập cũng như nghiên cứu.
+Đặc biệt, nhóm xin bày tỏ lòng biết ơn sâu sắc đến Giảng viên hướng dẫn đã tận tình định hướng, chỉ bảo từng yêu cầu kỹ thuật và giải đáp các vướng mắc thực tế để nhóm hoàn thiện hệ thống găng tay thông minh dịch ngôn ngữ ký hiệu. Nhóm cũng xin cảm ơn các anh chị khóa trên và các bạn sinh viên đã hỗ trợ tài liệu, đóng góp kinh nghiệm thực nghiệm trong quá trình thu thập dữ liệu và thử nghiệm mô hình.
+Mặc dù đã nỗ lực hoàn thiện đề tài một cách chỉn chu nhất, do giới hạn về thời gian và kiến thức chuyên ngành nên báo cáo khó tránh khỏi những thiếu sót nhất định. Nhóm rất mong nhận được sự đóng góp ý kiến của quý Thầy, Cô và các bạn sinh viên để hệ thống ngày càng hoàn thiện hơn.
+Xin chân thành cảm ơn!
+CAM ĐOAN
+Nhóm xin cam đoan đề tài: "Thiết kế và xây dựng hệ thống găng tay thông minh hỗ trợ giao tiếp cho người khiếm thính dựa trên công nghệ AIoT (Smart Sign Language Glove)" là quá trình tìm hiểu, thiết kế và nghiên cứu thực nghiệm của riêng nhóm dưới sự hướng dẫn của Giảng viên hướng dẫn thuộc Khoa Điện – Điện tử, Trường Đại học Sư phạm Kỹ thuật – Đại học Đà Nẵng. Các tài liệu tham khảo, bài báo khoa học và mã nguồn mở kế thừa đều được trích dẫn rõ ràng tại phần Tài liệu tham khảo.
+Nhóm xin hoàn toàn chịu trách nhiệm về nội dung đồ án của mình.
+MỤC LỤC DỰ KIẾN
+* TÓM TẮT, LỜI NÓI ĐẦU, CAM ĐOAN.
+* MỞ ĐẦU: Thực trạng giao tiếp của người khiếm thính, các giải pháp trên thế giới, mục tiêu, phạm vi và phương pháp nghiên cứu.
+* CHƯƠNG 1: GIỚI THIỆU TỔNG QUAN HỆ THỐNG GĂNG TAY THÔNG MINH AIoT.
+   * 1.1 Kiến trúc tổng thể 4 tầng của hệ thống AIoT.
+   * 1.2 Cơ chế thu thập dữ liệu cảm biến và truyền thông không dây.
+   * 1.3 Hệ thống hiển thị trực quan trên LCD, Web 3D và phát âm tiếng Việt.
+   * 1.4 Hệ thống chương trình chính và không gian nhãn nhận diện.
+   * 1.5 Mô hình thực thi phần cứng trên găng tay.
+   * 1.6 Các phần mềm và công cụ sử dụng để xây dựng hệ thống.
+* CHƯƠNG 2: THIẾT KẾ HỆ THỐNG PHẦN CỨNG.
+   * 2.1 Sơ đồ khối và kiến trúc kết nối phần cứng.
+   * 2.2 Vi điều khiển trung tâm ESP32-WROOM-32.
+   * 2.3 Khối cảm biến độ uốn ngón tay (Flex Sensors) và mạch phân áp ADC.
+   * 2.4 Khối cảm biến quán tính IMU (MPU6050).
+   * 2.5 Khối hiển thị LCD 1602 và chuẩn giao tiếp I2C.
+* CHƯƠNG 3: LƯU ĐỒ GIẢI THUẬT, XỬ LÝ TÍN HIỆU SỐ VÀ PHẦN MỀM.
+   * 3.1 Lưu đồ giải thuật thu thập và truyền nhận dữ liệu trên ESP32.
+   * 3.2 Kỹ thuật xử lý tín hiệu số (DSP) và trích xuất đặc trưng 2.850 chiều.
+   * 3.3 Thuật toán Học máy Support Vector Machine (SVM RBF Kernel).
+   * 3.4 Giải thuật nhận diện liên tục (Sliding Window) và Bộ máy trạng thái ghép câu.
+   * 3.5 Xây dựng giao diện mô phỏng bàn tay 3D và chuyển đổi văn bản thành giọng nói.
+* KẾT QUẢ - NHẬN XÉT – ĐÁNH GIÁ.
+* KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN.
+* TÀI LIỆU THAM KHẢO & PHỤ LỤC.
+MỞ ĐẦU
+1. Thực trạng giao tiếp của người khiếm thính và rào cản ngôn ngữ ký hiệu Giao tiếp là một trong những nhu cầu cơ bản nhất của con người, tuy nhiên hàng triệu người khiếm thính hoặc khiếm ngôn đang phải đối mặt với rào cản lớn khi diễn đạt ý muốn với cộng đồng. Ngôn ngữ ký hiệu tuy là phương tiện giao tiếp hiệu quả trong cộng đồng người khiếm thính nhưng lại ít được người bình thường hiểu biết, dẫn đến sự cô lập xã hội và hạn chế cơ hội trong giáo dục, y tế lẫn việc làm. Các hệ thống dịch ngôn ngữ ký hiệu dựa trên thị giác máy tính (camera-based) tuy có độ chính xác cao nhưng đòi hỏi bộ xử lý cấu hình mạnh, tính di động kém và rất nhạy cảm với điều kiện ánh sáng môi trường.
+2. Các hệ thống găng tay thông minh dịch ngôn ngữ ký hiệu trên thế giới Trên thế giới, nhiều nhóm nghiên cứu đã phát triển thiết bị đeo tay tích hợp cảm biến (wearable smart glove) để chuyển đổi trực tiếp cử chỉ bàn tay thành văn bản và lời nói với chi phí hợp lý và tính cơ động cao. Các nhà kỹ thuật sinh học tại Đại học UCLA (Mỹ) đã phát triển găng tay sử dụng sợi dẫn điện co giãn nhận diện 660 ký hiệu ASL theo thời gian thực với tốc độ xử lý khoảng 1 từ mỗi giây. Trong lĩnh vực thương mại, sản phẩm BrightSign Glove V2 đã hỗ trợ dịch hơn 40 ngôn ngữ cùng hơn 450 tùy chọn giọng nói qua kết nối Bluetooth BLE 5.0. Bên cạnh đó, các công trình nghiên cứu gần đây kết hợp cảm biến uốn (Flex Sensor), cảm biến quán tính (MPU6050) cùng vi điều khiển họ ESP32 và thuật toán học máy đã đạt độ chính xác nhận diện lên tới 95%.
+Nhận thấy tính cấp thiết và ý nghĩa nhân văn của việc xóa bỏ rào cản giao tiếp tại Việt Nam, nhóm quyết định chọn đề tài tốt nghiệp: "Thiết kế và xây dựng hệ thống găng tay thông minh hỗ trợ giao tiếp cho người khiếm thính dựa trên công nghệ AIoT (Smart Sign Language Glove)".
+3. Mục đích và mục tiêu nghiên cứu của đề tài Đề tài hướng tới thiết kế một hệ thống phần cứng và phần mềm tích hợp AIoT hoàn chỉnh với 5 mục tiêu cụ thể:
+* Thu thập dữ liệu thời gian thực: Đo lường chính xác chuyển động cơ học của 5 ngón tay và tư thế góc nghiêng, gia tốc cổ tay ở tần số lấy mẫu 100 Hz.
+* Xử lý tín hiệu số (DSP): Loại bỏ nhiễu xung ADC, chuẩn hóa góc gập theo phiên đeo và bù trôi quán tính cho cảm biến con quay hồi chuyển.
+* Huấn luyện mô hình Học máy: Phân loại chính xác bảng chữ cái ngón tay và các từ vựng giao tiếp thông dụng (kết hợp chuẩn ASL 1 tay và ngôn ngữ ký hiệu Việt Nam - VSL).
+* Nhận diện chuỗi liên tục và ghép câu: Triển khai cơ chế cửa sổ trượt (Continuous Sliding-window Recognition), tự động ghép từ thành câu hoàn chỉnh và xuất ra màn hình LCD 1602, giao diện Web 3D cùng giọng nói tiếng Việt (Text-to-Speech).
+* Định hướng tính toán biên (Edge Computing): Xây dựng lộ trình tối ưu hóa mô hình sang dạng TinyML (INT8) để chạy trực tiếp trên vi điều khiển mà không cần máy tính phụ trợ.
+4. Phương pháp nghiên cứu Nhóm áp dụng kết hợp ba phương pháp nghiên cứu chính:
+* Phương pháp phân tích và tổng hợp lý thuyết: Nghiên cứu nguyên lý hoạt động của cảm biến uốn, cảm biến quán tính MEMS, giao thức truyền thông I2C/TCP/WebSocket và lý thuyết phân loại mẫu bằng máy vector hỗ trợ (SVM).
+* Phương pháp tham khảo tài liệu: Kế thừa và đối chiếu các công trình nghiên cứu quốc tế trên IEEE, arXiv, Zenodo và các dự án mã nguồn mở về Smart Sign Language Glove.
+* Phương pháp thực nghiệm: Thiết kế mạch phần cứng trên ESP32, thu thập 559 mẫu dữ liệu cử chỉ thực tế cho 26 lớp nhãn, thực nghiệm so sánh hiệu năng giữa SVM RBF và mạng học sâu 1D-CNN để tối ưu hóa hệ thống.
+CHƯƠNG 1: GIỚI THIỆU TỔNG QUAN HỆ THỐNG GĂNG TAY THÔNG MINH AIoT
+1.1 Kiến trúc tổng thể 4 tầng của hệ thống AIoT
+Hệ thống được thiết kế theo mô hình kiến trúc 4 tầng tích hợp chặt chẽ từ phần cứng nhúng đến ứng dụng hiển thị và phát âm:
+* Tầng 1 - Hardware & Embedded Firmware (ESP32): Sử dụng 5 cảm biến Flex gắn trên 5 ngón tay và 1 cảm biến MPU6050 gắn trên mu bàn tay, đọc dữ liệu qua bộ chuyển đổi ADC 12-bit và bus I2C định thời chính xác ở tần số 100 Hz trên hệ điều hành thời gian thực FreeRTOS.
+* Tầng 2 - Digital Signal Processing & Trích xuất đặc trưng: Thực hiện nội suy tuyến tính trên lưới thời gian 1.5 giây (150 mẫu, bước 10 ms), lọc trung vị (Median Filter), chuẩn hóa Min-Max theo phiên (Open/Closed), tách vector trọng lực thân (Gravity Body) và tính đạo hàm vận tốc uốn ngón tay để tạo vector đặc trưng 2.850 chiều.
+* Tầng 3 - Mô hình Học máy & Nhận diện thời gian thực (Python Backend): Sử dụng bộ phân loại Scikit-learn Pipeline gồm bộ chuẩn hóa Z-Score và thuật toán SVC (RBF Kernel), kết hợp cửa sổ trượt 1.5 giây (bước nhảy 250 ms), bộ lọc khử rung nhãn (Streak >= 2) và bộ máy trạng thái ghép từ thành câu tự động (Sentence State Machine).
+* Tầng 4 - Hệ thống đầu ra đa phương thức (Output Phần cứng & Giao diện Web): Phản hồi ngược qua giao thức TCP về màn hình LCD 1602 I2C trên găng tay (hiển thị trạng thái LIVE/WAIT và câu dịch), đồng thời truyền qua WebSocket (cổng 8765) để mô phỏng bàn tay 3D (Three.js WebGL) và phát âm tiếng Việt (Text-to-Speech).
+1.2 Cơ chế thu thập dữ liệu và truyền thông
+Firmware trên vi điều khiển ESP32 (tệp mophong_com.ino) vận hành trên nền tảng FreeRTOS hỗ trợ đồng thời 2 chế độ truyền nhận song song:
+* Chế độ cổng USB Serial (Baudrate 115200): Phục vụ thu thập tập dữ liệu huấn luyện và gỡ lỗi (debug) với độ trễ cực thấp.
+* Chế độ không dây Wi-Fi TCP Server (Port 5000): Truyền luồng dữ liệu cảm biến thời gian thực không dây lên máy tính xử lý và nhận chuỗi văn bản kết quả dự đoán trả về để hiển thị trên găng tay.
+1.3 Hệ thống hiển thị trực quan trên Web 3D và phát âm tiếng Việt
+Bên cạnh màn hình LCD gắn trực tiếp trên găng, hệ thống cung cấp giao diện Web tương tác thời gian thực nhằm hỗ trợ người đối diện theo dõi trực quan:
+* Mô phỏng bàn tay 3D (Three.js WebGL): Dữ liệu góc uốn từng ngón tay và góc nghiêng cổ tay được truyền qua giao thức WebSocket (cổng 8765) để điều khiển khung xương (skeleton/bones) của mô hình bàn tay 3D trên trình duyệt theo thời gian thực.
+* Phát âm tiếng Việt tự động (Text-to-Speech): Khi một cử chỉ tức thời được xác nhận hoặc một câu ghép hoàn chỉnh được chốt, hệ thống tự động chuyển đổi văn bản thành giọng đọc tiếng Việt rõ ràng.
+1.4 Hệ thống chương trình chính và không gian nhãn nhận diện
+Chương trình chính được thiết kế xoay quanh 5 chức năng cốt lõi nhằm đảm bảo trải nghiệm giao tiếp tự nhiên nhất cho người khiếm thính:
+* Hiệu chuẩn động đầu phiên (Dynamic Calibration): Cho phép người dùng thực hiện thao tác duỗi thẳng và nắm chặt bàn tay khi mới đeo găng để tự động thích nghi với kích thước bàn tay khác nhau.
+* Nhận diện 26 lớp ký hiệu (26 Classes): Phân loại chính xác 22 chữ cái ngón tay (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, R, S, T, U, V, W), 3 từ giao tiếp VSL thông dụng (CHAO - Xin chào, CAM_ON - Cảm ơn, TOI - Tôi) và 1 trạng thái nền nghỉ (NONE).
+* Nhận diện liên tục bằng cửa sổ trượt: Không yêu cầu người dùng bấm nút bắt đầu/kết thúc cho từng từ mà tự động quét luồng dữ liệu liên tục với bước nhảy 250 ms.
+* Khử rung nhãn và chống nhiễu chuyển tiếp: Chỉ xác nhận nhãn khi có ít nhất 2 lần dự đoán liên tiếp trùng khớp, loại bỏ sai sót khi các ngón tay đang chuyển trạng thái giữa hai ký hiệu.
+* Tự động ngắt từ và chốt câu: Sử dụng tư thế thả lỏng tay (NONE) trong 0.5 giây làm khoảng trắng ngắt từ và tự động chốt câu hoàn chỉnh sau 2.5 giây nghỉ để phát âm cả câu.
+1.5 Mô hình thực thi phần cứng
+Mô hình phần cứng của đề tài được lắp ráp trực tiếp trên một chiếc găng tay vải co giãn, gọn nhẹ và an toàn cho người đeo, bao gồm các thành phần chính:
+* Vi điều khiển ESP32-WROOM-32: Đóng vai trò bộ xử lý trung tâm thu thập dữ liệu ADC, giao tiếp I2C và truyền thông Wi-Fi/Serial.
+* 5 Cảm biến uốn (Flex Sensors): Gắn dọc theo 5 ngón tay (Cái, Trỏ, Giữa, Áp út, Út) để biến đổi độ cong cơ học thành tín hiệu điện áp analog.
+* Cảm biến quán tính MPU6050: Gắn cố định trên mu bàn tay để đo gia tốc 3 trục và vận tốc góc 3 trục của bàn tay trong không gian 3D.
+* Màn hình LCD 1602 kèm module I2C PCF8574: Gắn trên găng tay để hiển thị trực tiếp từ/câu vừa dịch và trạng thái kết nối của hệ thống.
+1.6 Các phần mềm và công cụ được sử dụng để xây dựng hệ thống
+* Phần mềm Arduino IDE và FreeRTOS: Môi trường lập trình ngôn ngữ C/C++ mã nguồn mở dùng để viết firmware cho ESP32, cấu hình bộ chuyển đổi ADC 12-bit, giao tiếp đa bus I2C và quản lý định thời lấy mẫu 100 Hz bằng FreeRTOS.
+* Ngôn ngữ Python và thư viện Scikit-learn: Sử dụng để xây dựng toàn bộ tầng xử lý tín hiệu số (DSP), trích xuất vector đặc trưng 2.850 chiều, huấn luyện mô hình phân loại SVM (RBF Kernel) và vận hành luồng suy luận thời gian thực.
+* Thư viện Three.js (WebGL) và giao thức WebSocket: Công cụ đồ họa 3D trên nền tảng JavaScript kết hợp giao thức truyền thông hai chiều độ trễ thấp WebSocket (cổng 8765) để tái tạo chuyển động bàn tay 3D và phát âm thanh trên giao diện Web.
+CHƯƠNG 2: THIẾT KẾ HỆ THỐNG PHẦN CỨNG
+2.1 Sơ đồ khối và kiến trúc kết nối phần cứng
+Hệ thống phần cứng gồm khối thu thập tín hiệu (5 cảm biến Flex và cảm biến MPU6050), khối xử lý trung tâm (ESP32-WROOM-32) và khối hiển thị tại chỗ (LCD 1602 I2C). Tín hiệu từ 5 ngón tay được đưa vào 5 kênh của bộ ADC1 trên ESP32, trong khi MPU6050 và màn hình LCD 1602 giao tiếp với ESP32 trên hai bus I2C phần cứng tách biệt hoàn toàn để tối ưu tốc độ truyền tải và tránh xung đột địa chỉ.
+2.2 Vi điều khiển trung tâm ESP32-WROOM-32
+ESP32-WROOM-32 là module vi điều khiển tích hợp kết nối Wi-Fi và Bluetooth năng lượng thấp (BLE) mạnh mẽ, rất phù hợp cho các thiết bị đeo thông minh AIoT:
+* Bộ vi xử lý: Dual-core Tensilica Xtensa 32-bit LX6 hoạt động ở tần số xung nhịp lên đến 240 MHz.
+* Bộ nhớ: Tích hợp 520 KB SRAM và 4 MB bộ nhớ Flash.
+* Ngoại vi tích hợp: Cung cấp bộ chuyển đổi tương tự - số (ADC) độ phân giải 12-bit (dải giá trị 0 – 4095), 2 bộ điều khiển bus I2C phần cứng độc lập và giao tiếp UART tốc độ cao.
+2.3 Khối cảm biến độ uốn ngón tay (Flex Sensors)
+1. Nguyên lý hoạt động và mạch phối ghép Cảm biến uốn (Flex Sensor) hoạt động như một điện trở biến thiên theo độ cong cơ học: khi ngón tay gập lại, lớp vật liệu dẫn điện trên bề mặt cảm biến bị kéo giãn làm giá trị điện trở tăng lên tỷ lệ thuận với góc uốn. Để vi điều khiển ESP32 đọc được sự thay đổi này, mỗi cảm biến Flex được mắc nối tiếp với một điện trở kéo xuống đất (GND) có giá trị Rpull​=10 kΩ tạo thành mạch cầu phân áp với nguồn cấp chuẩn Vin​=3.3 V.
+2. Sơ đồ phân bổ chân kết nối ADC trên ESP32 Trên vi điều khiển ESP32, bộ ADC2 bị chiếm dụng khi kích hoạt module truyền thông Wi-Fi. Do đó, toàn bộ 5 cảm biến uốn ngón tay trong đề tài đều được thiết kế kết nối vào bộ ADC1 để đảm bảo hệ thống đọc dữ liệu ổn định tuyệt đối khi truyền nhận qua Wi-Fi:
+* Ngón cái (Thumb): Kết nối vào chân GPIO 32 (kênh ADC1_CH4).
+* Ngón trỏ (Index): Kết nối vào chân GPIO 33 (kênh ADC1_CH5).
+* Ngón giữa (Middle): Kết nối vào chân GPIO 34 (kênh ADC1_CH6).
+* Ngón áp út (Ring): Kết nối vào chân GPIO 35 (kênh ADC1_CH7).
+* Ngón út (Little/Pinky): Kết nối vào chân GPIO 36 / SENSOR_VP (kênh ADC1_CH0).
+2.4 Khối cảm biến quán tính IMU (MPU6050)
+Các hệ thống chỉ sử dụng cảm biến uốn thường gặp khó khăn khi phân biệt các ký hiệu có cùng hình dạng gập ngón tay nhưng khác nhau về hướng xoay cổ tay hoặc chuyển động trong không gian. Để giải quyết bài toán này, đề tài tích hợp module cảm biến quán tính MPU6050 gắn cố định trên mu bàn tay:
+* Cấu tạo cảm biến: Tích hợp cảm biến gia tốc kế 3 trục (3-axis accelerometer) cấu hình ở dải đo ±2g và con quay hồi chuyển 3 trục (3-axis gyroscope) cấu hình ở dải đo ±250∘/s.
+* Cấu hình giao tiếp: Kết nối với ESP32 thông qua I2C Hardware Bus 1 với chân dữ liệu SDA nối vào GPIO 27 và chân xung nhịp SCL nối vào GPIO 26.
+2.5 Khối hiển thị LCD 1602 và chuẩn giao tiếp I2C
+1. Màn hình LCD 1602 Màn hình tinh thể lỏng LCD 1602 sử dụng chip điều khiển HD44780, hoạt động ở điện áp 5V, có khả năng hiển thị 2 dòng với mỗi dòng 16 ký tự chữ và số trực quan, độ bền cao và tiêu thụ ít năng lượng.
+2. Chuẩn giao tiếp I2C và module chuyển đổi PCF8574 Giao thức I2C (Inter-Integrated Circuit) do Philips Semiconductor phát triển cho phép truyền nhận dữ liệu nối tiếp đồng bộ chỉ qua 2 đường dây tín hiệu là SDA (dữ liệu) và SCL (xung nhịp), đảm bảo tính toàn vẹn dữ liệu nhờ bit phản hồi ACK trên mỗi byte. Thay vì phải sử dụng từ 6 đến 8 chân GPIO để điều khiển trực tiếp màn hình LCD, hệ thống sử dụng module mở rộng I2C tích hợp IC PCF8574 ở địa chỉ mặc định 0x27. Module LCD 1602 I2C được kết nối vào I2C Hardware Bus 0 của ESP32 với chân SDA nối vào GPIO 21 và chân SCL nối vào GPIO 22.
+CHƯƠNG 3: LƯU ĐỒ GIẢI THUẬT, XỬ LÝ TÍN HIỆU SỐ VÀ PHẦN MỀM
+3.1 Lưu đồ giải thuật thu thập và truyền nhận dữ liệu trên ESP32
+Quy trình hoạt động của chương trình nhúng trên vi điều khiển ESP32 (tệp mophong_com.ino) gồm các bước tuần tự sau:
+1. Khởi tạo hệ thống: Thiết lập giao tiếp Serial ở tốc độ 115200 bps, khởi tạo 2 bus I2C phần cứng (Bus 0 cho LCD 1602 tại GPIO 21/22 và Bus 1 cho MPU6050 tại GPIO 27/26), cấu hình 5 kênh ADC1 12-bit và khởi chạy Wi-Fi TCP Server tại cổng 5000.
+2. Định thời lấy mẫu 100 Hz: Sử dụng bộ lập lịch của hệ điều hành thời gian thực FreeRTOS để kích hoạt chu kỳ đọc cảm biến chính xác mỗi 10 ms (tương ứng tần số 100 Hz).
+3. Đọc và đóng gói dữ liệu: Tại mỗi chu kỳ 10 ms, ESP32 đọc 5 giá trị điện áp analog từ 5 cảm biến Flex và 6 giá trị quán tính (3 trục gia tốc ax​,ay​,az​ cùng 3 trục vận tốc góc ωx​,ωy​,ωz​) từ MPU6050, gắn nhãn thời gian (timestamp) và truyền đồng thời qua cổng USB Serial và Wi-Fi TCP.
+4. Nhận phản hồi và hiển thị LCD: Khi nhận được gói tin kết quả dịch từ Python Backend gửi về qua giao thức TCP, ESP32 cập nhật trạng thái (LIVE/WAIT) và hiển thị từ hoặc câu hoàn chỉnh lên màn hình LCD 1602.
+3.2 Kỹ thuật xử lý tín hiệu số (DSP) và trích xuất đặc trưng (Feature Engineering)
+Tín hiệu thô thu nhận từ găng tay thường chứa nhiễu điện tử, hiện tượng rung nhịp truyền thông (jitter) và sai lệch vị trí khi đeo lại găng. Trước khi đưa vào mô hình học máy, luồng dữ liệu được xử lý qua chuỗi 6 thuật toán toán học tại tệp sequence_model_5.py:
+1. Chuẩn hóa tốc độ lấy mẫu (Linear Resampling & Interpolation): Để triệt tiêu hiện tượng rung nhịp (jitter) khi truyền qua mạng không dây, chuỗi dữ liệu thu thập ở tần số danh định 100 Hz trong cửa sổ 1.5 giây (1500 ms) được nội suy tuyến tính cố định về lưới 150 điểm chuẩn cách đều 10 ms:
+GRID=[0,10,20,…,1490] ms
+2. Lọc trung vị ngón tay (5-sample Moving Median Filter): Áp dụng bộ lọc trung vị trượt 5 mẫu lên từng kênh cảm biến uốn nhằm loại bỏ hoàn toàn các đỉnh nhiễu xung đột biến (impulse noise) từ bộ chuyển đổi ADC mà không làm trễ pha tín hiệu uốn.
+3. Hiệu chuẩn co giãn Min-Max theo từng phiên (Per-session Dynamic Calibration): Khắc phục sự thay đổi giá trị điện trở khi tháo ra/đeo lại găng tay hoặc giữa các kích cỡ bàn tay khác nhau bằng công thức chuẩn hóa:
+flex_normi​(t)=closedi​−openi​rawi​(t)−openi​​
+Trong đó openi​ và closedi​ là giá trị ADC tham chiếu đo được khi người dùng duỗi thẳng hoàn toàn và gập tối đa ngón tay thứ i ở đầu phiên làm việc.
+4. Tách thành phần trọng lực thân (Gravity Body Decomposition): Sử dụng bộ lọc bù kết hợp (Complementary Filter) giữa gia tốc kế và con quay hồi chuyển để tách vector trọng lực trên hệ quy chiếu gắn liền với mu bàn tay (gravityx,y,z​). Sau khi tách trọng lực, hệ thống thu được gia tốc chuyển động thuần túy của bàn tay (acc_bodyx,y,z​) và giữ nguyên thông tin góc nghiêng tĩnh tuyệt đối trong không gian 3D.
+5. Khử trôi tĩnh con quay hồi chuyển (Gyro Bias Correction): Loại bỏ sai số trôi điểm không (zero-rate offset) bằng cách trừ đi vector trung bình đo được trong 5 giây giữ yên bàn tay ban đầu:
+ωcorrected​=ωraw​−ωbias​
+6. Vận tốc biến thiên góc uốn (Centered Finite Difference Velocity): Tính đạo hàm bậc nhất của độ uốn ngón tay bằng sai phân hữu hạn trung tâm trong khoảng thời gian đối xứng 40 ms để phân biệt rõ cử chỉ động và tư thế tĩnh:
+vi​(t)=ti+2​−ti−2​flexi​(t+2)−flexi​(t−2)​
+Tổng hợp Vector đặc trưng đầu vào: Tại mỗi bước thời gian 10 ms, hệ thống trích xuất 19 đặc trưng gồm: 5 đặc trưng độ uốn chuẩn hóa (flex_norm), 3 đặc trưng trọng lực thân (gravity_body), 3 đặc trưng vận tốc góc đã bù trôi (gyro_corrected), 3 đặc trưng gia tốc thân (acc_body) và 5 đặc trưng vận tốc uốn (dflex_velocity). Trên toàn bộ cửa sổ 150 khung thời gian, tổng số chiều của vector đặc trưng cho một mẫu cử chỉ là:
+Nfeatures​=150 frames×19 features=2.850 chieˆˋu
+3.3 Thuật toán Học máy Support Vector Machine (SVM RBF Kernel)
+1. Kiến trúc mô hình phân loại Hệ thống sử dụng kiến trúc Scikit-learn Pipeline kết hợp hai tầng xử lý nối tiếp và lưu trữ trong tệp model.joblib (dung lượng khoảng 13.95 MB, chứa 598 Support Vectors):
+   * Tầng chuẩn hóa Z-Score: Sử dụng hàm StandardScaler() để chuẩn hóa trung bình về 0 và phương sai về 1 một cách độc lập cho từng vị trí thời gian và từng đặc trưng trong không gian 2.850 chiều.
+   * Tầng phân loại SVM phi tuyến: Sử dụng bộ phân loại SVC(C=1.0, kernel="rbf", class_weight="balanced") với hàm nhân Radial Basis Function (RBF) và cơ chế tự động cân bằng trọng số giữa các lớp.
+2. Phân tích thực nghiệm: Tại sao chọn SVM RBF thay vì Deep Learning (1D-CNN / LSTM)? Trong quá trình nghiên cứu, nhóm đã thực nghiệm cả hai phương pháp (bao gồm mạng nơ-ron tích chập 1 chiều 1D-CNN trong tệp train_legacy.py) trên tập dữ liệu thực tế gồm 559 mẫu thuộc 26 lớp (trung bình 15 – 25 mẫu/lớp) và rút ra kết luận khoa học quan trọng:
+   * Hạn chế của mạng học sâu (1D-CNN) trên tập dữ liệu nhỏ: Do số lượng tham số lớn trong khi số mẫu mỗi lớp nhỏ, mạng 1D-CNN gặp hiện tượng học vẹt (Overfitting) nghiêm trọng, đạt độ chính xác 100% trên tập huấn luyện nhưng suy giảm khả năng tổng quát hóa khi người khác đeo găng tay.
+   * Ưu thế vượt trội của SVM RBF: Nguyên lý tối ưu hóa lề cực đại (Maximum Margin Classifier) của SVM hoạt động cực kỳ hiệu quả trong không gian đặc trưng số chiều cao (2.850 chiều) với cỡ mẫu vừa và nhỏ. Quá trình huấn luyện SVM RBF chỉ mất dưới 10 giây trên CPU thông thường, hội tụ về nghiệm toàn cục xác định và không bị phụ thuộc vào tính ngẫu nhiên khi khởi tạo trọng số.
+3.4 Giải thuật nhận diện liên tục (Sliding Window) và Bộ máy trạng thái ghép câu
+Chương trình nhận diện thời gian thực (tệp predict_continuous_5.py) giải quyết bài toán phân đoạn cử chỉ liên tục thông qua 4 cơ chế chính:
+   1. Cửa sổ trượt (Sliding Window): Hệ thống duy trì hàng đợi vòng deque(maxlen=150) lưu trữ đúng 1.5 giây dữ liệu cảm biến gần nhất. Cứ sau mỗi bước nhảy 250 ms, mô hình thực hiện một lượt suy luận trên cửa sổ hiện tại.
+   2. Phát hiện gián đoạn mạng (Gap Detection): Nếu khoảng cách thời gian (timestamp) giữa 2 gói tin liên tiếp vượt quá 20 ms do suy hao đường truyền, hàng đợi tự động được xóa sạch và đợi thu thập đủ 150 mẫu liên tục mới để tránh sai lệch khi nội suy.
+   3. Khử rung nhãn (Streak Debounce Confirmation): Một nhãn ký hiệu chỉ được hệ thống công nhận khi xuất hiện liên tiếp tối thiểu 2 lần dự đoán trùng khớp (streak >= 2), giúp triệt tiêu hiện tượng nhảy chữ giả tạo khi các ngón tay đang trong pha chuyển tiếp co duỗi.
+   4. Bộ máy trạng thái ghép câu tự động (Sentence State Machine):
+   * Nhóm câu giao tiếp tức thời (Instant Sentences): Khi nhận diện các nhãn từ vựng độc lập như CHAO ("Xin chào") hoặc CAM_ON ("Cảm ơn"), hệ thống xuất văn bản và phát âm ngay lập tức mà không cần chờ ghép câu.
+   * Nhóm ghép từ tự do: Sử dụng trạng thái thả lỏng tay NONE kéo dài 0.5 s làm dấu ngắt từ (khoảng trắng). Ví dụ, khi người dùng thực hiện chuỗi cử chỉ TOI → NONE → AN → NONE → COM, các từ tương ứng được đẩy tuần tự vào bộ đệm ["Tôi", "ăn", "cơm"].
+   * Tự động chốt câu (Inactivity Timeout): Khi người dùng buông tay nghỉ ở trạng thái NONE quá 2.5 giây, hệ thống tự động ghép toàn bộ từ trong bộ đệm thành câu hoàn chỉnh ("Tôi ăn cơm."), gửi về hiển thị trên màn hình LCD 1602 của găng tay và phát âm tiếng Việt qua thư viện TTS.
+KẾT QUẢ - NHẬN XÉT – ĐÁNH GIÁ
+1. Kết quả đạt được
+Sau quá trình thiết kế, thi công và thử nghiệm thực tế, đề tài đã hoàn thành toàn bộ các mục tiêu đề ra ban đầu:
+   * Về phần cứng: Chế tạo thành công mô hình găng tay thông minh tích hợp ESP32-WROOM-32, 5 cảm biến uốn Flex trên bộ ADC1, cảm biến quán tính MPU6050 và màn hình LCD 1602 I2C hoạt động ổn định ở tần số lấy mẫu 100 Hz qua cả cổng USB Serial và Wi-Fi TCP.
+   * Về xử lý tín hiệu và AI: Xây dựng hoàn chỉnh pipeline DSP 6 bước trích xuất 2.850 đặc trưng và huấn luyện thành công mô hình SVM (RBF Kernel) trên 559 mẫu dữ liệu, phân loại chính xác 26 lớp ký hiệu (22 chữ cái ngón tay ASL, 3 từ giao tiếp VSL và 1 trạng thái nghỉ).
+   * Về phần mềm ứng dụng: Vận hành mượt mà cơ chế nhận diện liên tục cửa sổ trượt (bước nhảy 250 ms), tự động ghép từ thành câu hoàn chỉnh, đồng bộ hiển thị lên màn hình LCD 1602, mô phỏng bàn tay 3D thời gian thực trên Web (Three.js) và phát âm giọng nói tiếng Việt.
+2. Nhận xét và đánh giá
+Ưu điểm của hệ thống:
+   * Tính cơ động và thực tiễn cao: Thiết kế dạng găng tay đeo trực tiếp không bị ảnh hưởng bởi điều kiện ánh sáng, góc khuất hay phông nền phức tạp như các hệ thống dùng camera.
+   * Độ ổn định và khả năng thích nghi tốt: Nhờ thuật toán hiệu chuẩn động Min-Max theo phiên và tách trọng lực bằng bộ lọc bù, hệ thống duy trì độ chính xác cao ngay cả khi tháo ra đeo lại hoặc thay đổi người sử dụng.
+   * Tương tác tự nhiên theo thời gian thực: Cơ chế cửa sổ trượt kết hợp khử rung nhãn (Streak >= 2) và bộ máy trạng thái ghép câu giúp người khiếm thính diễn đạt liên tục mà không cần thao tác bấm nút thủ công sau mỗi ký hiệu.
+Khuyết điểm và cách khắc phục:
+   * Phụ thuộc vào máy tính xử lý trung gian: Hiện tại tầng suy luận SVM (model.joblib nặng ~13.95 MB) và bộ phát âm TTS vẫn đang chạy trên Python Backend ở máy tính qua kết nối Wi-Fi TCP/Serial.
+   * Cách khắc phục: Chuyển đổi mô hình sang kiến trúc mạng nơ-ron tích chập thu gọn TinyML (TensorFlow Lite Micro INT8) để nạp và suy luận trực tiếp ngay trên vi điều khiển.
+   * Chưa có bộ phát âm thanh vật lý độc lập trên găng: Âm thanh tiếng Việt hiện được phát qua loa máy tính hoặc trình duyệt Web.
+   * Cách khắc phục: Tích hợp thêm module giải mã âm thanh DFPlayer Mini hoặc bộ khuếch đại I2S DAC (MAX98357A) nối với loa mini gắn trực tiếp trên mu bàn tay.
+   * Giới hạn về số lượng từ vựng và cử chỉ hai tay: Hệ thống hiện nhận diện 26 lớp ký hiệu trên một bàn tay.
+   * Cách khắc phục: Mở rộng thu thập dữ liệu cho từ điển ngôn ngữ ký hiệu Việt Nam (VSL) và phát triển thêm găng tay thứ hai kết hợp đồng bộ qua giao thức ESP-NOW hoặc BLE.
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+1. Kết luận
+Đề tài "Thiết kế và xây dựng hệ thống găng tay thông minh hỗ trợ giao tiếp cho người khiếm thính dựa trên công nghệ AIoT (Smart Sign Language Glove)" đã giải quyết hiệu quả bài toán thu thập, xử lý tín hiệu cử chỉ bàn tay và chuyển đổi ngôn ngữ ký hiệu thành văn bản cũng như giọng nói tiếng Việt theo thời gian thực. Qua quá trình thực hiện đồ án, nhóm đã làm chủ được kỹ thuật lập trình nhúng thời gian thực với FreeRTOS trên ESP32, kỹ thuật xử lý tín hiệu số chuỗi thời gian (DSP), phương pháp huấn luyện và tối ưu hóa mô hình học máy với Scikit-learn cũng như xây dựng giao diện mô phỏng 3D thời gian thực qua WebSocket và Three.js.
+2. Hướng phát triển (Triển khai Edge Computing & TinyML độc lập)
+Để nâng cấp sản phẩm thành một thiết bị đeo độc lập hoàn chỉnh không cần máy tính phụ trợ, nhóm đã xây dựng lộ trình phát triển cụ thể dựa trên các công cụ chuyển đổi đã chuẩn bị sẵn trong dự án:
+   * Nâng cấp phần cứng lên vi điều khiển ESP32-S3: Sử dụng chip ESP32-S3 tích hợp tập lệnh tăng tốc phần cứng Vector Instructions (PIE) cho phép nhân-cộng ma trận AI tốc độ cao cùng bộ nhớ 8 MB PSRAM. Hệ thống sẽ tận dụng kiến trúc FreeRTOS Dual-Core độc lập: Core 0 chuyên trách đọc cảm biến ở tần số 100 Hz bằng ngắt phần cứng, trong khi Core 1 chuyên chạy suy luận AI.
+   * Triển khai mô hình TinyML (TensorFlow Lite Micro): Rút gọn mô hình phân loại thành kiến trúc mạng Tiny 1D-CNN INT8 gồm khoảng 3.500 tham số thông qua quy trình lượng tử hóa 8-bit (sử dụng các công cụ chuyển đổi convert_int8.py và tflite_to_header.py đã xây dựng sẵn). Sau khi nén, dung lượng mô hình chỉ chiếm khoảng 25 KB Flash và 20 KB RAM, cho phép chạy trực tiếp trên chip nhúng với độ trễ suy luận dưới 6 ms/lượt.
+   * Phát âm thanh trực tiếp trên găng tay: Kết nối trực tiếp module giải mã âm thanh DFPlayer Mini hoặc mạch I2S DAC (MAX98357A) kèm loa mini công suất nhỏ ngay trên hộp mạch cổ tay để phát tiếng nói tức thời khi người khiếm thính ra ký hiệu.
+TÀI LIỆU THAM KHẢO
+   1. Anh Thu Nguyen Ngoc, Tam Phong Truong, Thai Anh Nguyen Duong, Vu Linh Nguyen, & Manh Duong Phung. (2026). Multimodal Smart Glove for Sign Language Recognition Using Deep Learning. In Proceedings of IFToMM International Symposium on Robotics and Mechatronics, arXiv:2607.06996.
+   2. Shravan Gursale, Aditya Sawant, Sankalp Karande, & Mr. Amol Patil. (2026). Design and Development of a Smart Sign Language Recognition Glove Using ESP32. Journal of Advancement in Electronics Design, 9(2), 5–8, Zenodo.
+   3. Bhavjot Gill (Gill003) & Arvind Dhaliwal. (2026). Smart Sign Language Translator Glove: ESP32, Flex Sensors, MPU-6050, and Three.js 3D Hand Model. GitHub Repository.
+   4. Team SignSpeak: Nandana Ajith, George, Thomas Cyriac, & Alex Thomas. (2025). GloveTalk: Converting Sign Language to Words using ESP32, MPU6050, and Flex Sensors. Hackster.io.
+   5. Jun Chen Lab / UCLA & Idha Valeur. (2020). A Glove That Translates American Sign Language in Real Time. Nature Biomedical Engineering / IOM3.
+   6. BrightSign Technology Limited. (2025). BrightSign Sign Language Translator Glove V2 Technical Documentation. MindTecStore.
+PHỤ LỤC: CẤU TRÚC MÃ NGUỒN HỆ THỐNG
+Để thuận tiện cho việc trình bày trong phần Phụ lục của cuốn báo cáo (tương tự phần Phụ lục code Arduino và C# trong file mẫu), bạn hãy đính kèm nội dung các tệp mã nguồn chính của dự án theo thứ tự sau:
+   * Phụ lục 1 - Firmware thu thập dữ liệu trên ESP32 (mophong_com/mophong_com.ino): Chứa mã nguồn C/C++ khởi tạo FreeRTOS, đọc 5 kênh ADC1 (GPIO 32, 33, 34, 35, 36), đọc cảm biến MPU6050 qua I2C Bus 1 (GPIO 27, 26), điều khiển màn hình LCD 1602 qua I2C Bus 0 (GPIO 21, 22) và truyền nhận qua cổng USB Serial / Wi-Fi TCP Server (Port 5000).
+   * Phụ lục 2 - Module xử lý tín hiệu số và trích xuất đặc trưng (SmartSignLanguage/sequence_model_5.py): Chứa mã nguồn Python thực hiện nội suy tuyến tính 150 mẫu, lọc trung vị 5 mẫu, chuẩn hóa Min-Max, tách trọng lực bằng bộ lọc bù, khử trôi Gyro và tính đạo hàm vận tốc uốn tạo vector 2.850 chiều.
+   * Phụ lục 3 - Chương trình nhận diện liên tục và ghép câu tự động (SmartSignLanguage/predict_continuous_5.py): Chứa mã nguồn Python vận hành cửa sổ trượt deque(maxlen=150), nạp mô hình SVM (model.joblib), khử rung nhãn (streak >= 2), bộ máy trạng thái ghép câu (Sentence State Machine), phát âm tiếng Việt TTS và truyền dữ liệu qua WebSocket (Port 8765) lên giao diện Web 3D.
+   * Phụ lục 4 - Công cụ chuyển đổi mô hình TinyML (SmartSignLanguage/convert_int8.py và SmartSignLanguage/tflite_to_header.py): Chứa mã nguồn lượng tử hóa mô hình sang định dạng INT8 và xuất mảng C header để nạp trực tiếp lên vi điều khiển biên.
+Bạn có muốn mình xuất toàn bộ nội dung báo cáo này ra một file Word (.docx) được định dạng sẵn hoặc viết chi tiết thêm phần thuyết minh cho từng đoạn code trong Phụ lục không?
+________________
+
+
+User prompt: xuất toàn bộ nội dung báo cáo này ra một file Word (.docx) được định dạng sẵn
+Response:
+________________

@@ -1,0 +1,21 @@
+.bridge-venv/
+.runtime/
+.firmware-build/
+.firmware-com-build/
+.firmware-cache/
+__pycache__/
+*.py[cod]
+debug.log
+.code-review-graph/
+
+# Local credentials and workstation artifacts
+**/wifi_secrets.h
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.work-report/
+Thumbs.db
+Desktop.ini
+~$*

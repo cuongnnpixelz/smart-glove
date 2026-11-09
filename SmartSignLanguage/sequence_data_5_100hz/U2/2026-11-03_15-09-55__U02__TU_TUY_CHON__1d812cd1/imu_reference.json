@@ -1,0 +1,150 @@
+{
+  "schema": "sequence-imu-v1",
+  "processor": "gravity-complementary-v1",
+  "sample_ms": 10,
+  "gyro_bias": [
+    -0.028245,
+    0.061686,
+    0.007194
+  ],
+  "gravity": 8.936222250508154,
+  "flex_calibrated": true,
+  "world_frame": "local +Z stationary acceleration, relative yaw",
+  "quaternion": "Hamilton w,x,y,z; body to local world",
+  "units": {
+    "timestamp": "ms since device boot",
+    "flex": "raw ADC",
+    "acceleration": "m/s^2",
+    "gyroscope": "rad/s"
+  },
+  "flex_pins": [
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "fingers": [
+    "thumb",
+    "index",
+    "middle",
+    "ring",
+    "little"
+  ],
+  "csv_columns": [
+    "timestamp",
+    "user_id",
+    "session_id",
+    "trial_id",
+    "label",
+    "flex_1",
+    "flex_2",
+    "flex_3",
+    "flex_4",
+    "flex_5",
+    "Qw",
+    "Qx",
+    "Qy",
+    "Qz",
+    "GYRx",
+    "GYRy",
+    "GYRz",
+    "ACCx",
+    "ACCy",
+    "ACCz",
+    "ACCx_body",
+    "ACCy_body",
+    "ACCz_body",
+    "ACCx_world",
+    "ACCy_world",
+    "ACCz_world"
+  ],
+  "trial_seconds": 1.5,
+  "sample_count": 150,
+  "flex_calibration_schema": "five-flex-10k-calibration-v2",
+  "flex_calibration": {
+    "flex_1": {
+      "open": 1040.0,
+      "closed": 989.0,
+      "open_p05": 1030.0,
+      "open_p95": 1048.0,
+      "open_drift": 1.5,
+      "closed_p05": 979.0,
+      "closed_p95": 1000.0,
+      "closed_drift": 2.5,
+      "noise_p90": 21.0
+    },
+    "flex_2": {
+      "open": 1004.0,
+      "closed": 945.0,
+      "open_p05": 995.0,
+      "open_p95": 1012.0,
+      "open_drift": 1.0,
+      "closed_p05": 938.0,
+      "closed_p95": 953.0,
+      "closed_drift": 2.0,
+      "noise_p90": 17.0
+    },
+    "flex_3": {
+      "open": 1107.0,
+      "closed": 1077.0,
+      "open_p05": 1101.0,
+      "open_p95": 1114.0,
+      "open_drift": 0.0,
+      "closed_p05": 1070.0,
+      "closed_p95": 1084.0,
+      "closed_drift": 0.0,
+      "noise_p90": 14.0
+    },
+    "flex_4": {
+      "open": 929.0,
+      "closed": 877.0,
+      "open_p05": 920.0,
+      "open_p95": 937.0,
+      "open_drift": -1.0,
+      "closed_p05": 869.0,
+      "closed_p95": 885.0,
+      "closed_drift": -0.5,
+      "noise_p90": 17.0
+    },
+    "flex_5": {
+      "open": 1037.0,
+      "closed": 982.0,
+      "open_p05": 1030.0,
+      "open_p95": 1042.0,
+      "open_drift": 0.0,
+      "closed_p05": 974.0,
+      "closed_p95": 989.0,
+      "closed_drift": 0.5,
+      "noise_p90": 15.0
+    }
+  },
+  "flex_calibration_method": "all-fingers-3s-last-2s",
+  "divider_ohms": 10000,
+  "supply_volts": 3.3,
+  "divider_topology": "3V3-flex-ADC-10k-GND",
+  "collection_protocol": "five-flex-calibrated-100hz-1.5s-v2",
+  "imu_source": "raw MPU6050 + Python complementary filter (not DMP)",
+  "imu_ranges": {
+    "accel_g": 2,
+    "gyro_deg_s": 250,
+    "dlpf_hz": 21
+  },
+  "user_id": "U02",
+  "session_id": "20261103T080955Z_1d812cd1",
+  "labels": [
+    "NEN"
+  ],
+  "repetitions": 20,
+  "gesture_type": "auto",
+  "gesture_types": {
+    "NEN": "static"
+  },
+  "data_layout": "per-label-csv-v1",
+  "transport": "usb-serial",
+  "connection": "COM3",
+  "serial_baud": 230400,
+  "label_display_names": {
+    "NEN": "NEN"
+  }
+}

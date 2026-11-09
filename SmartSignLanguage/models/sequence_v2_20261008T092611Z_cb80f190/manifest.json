@@ -1,0 +1,36 @@
+{
+  "schema": "sequence-svm-v2",
+  "processor": "gravity-complementary-v1",
+  "sample_ms": 40,
+  "duration_ms": 5000,
+  "features": [
+    "flex_1_delta",
+    "flex_2_delta",
+    "relative_Qw",
+    "relative_Qx",
+    "relative_Qy",
+    "relative_Qz",
+    "GYRx_bias_corrected",
+    "GYRy_bias_corrected",
+    "GYRz_bias_corrected",
+    "ACCx_body",
+    "ACCy_body",
+    "ACCz_body",
+    "dFlex_1_adc_per_s",
+    "dFlex_2_adc_per_s"
+  ],
+  "labels": [
+    "GIUA_TRAI_DUOI",
+    "NONE",
+    "TRO_PHAI_DUOI",
+    "TRO_TRAI_DUOI"
+  ],
+  "sklearn_version": "1.7.2",
+  "evaluation_scope": "within_session_trial_holdout",
+  "model_sha256": "b28253588d59744579bcbed2290d256ac519ecb478c421ae0f446028540ccdad",
+  "input": "whole 5-second sequence, fixed 126-sample grid; one prediction per trial",
+  "scaling": "StandardScaler fit only on training trials, per flattened time/feature position",
+  "motion_checks": "classifier-only",
+  "motion_guards": {},
+  "preprocessing": "3-sample median flex; first 0.5s baseline; 160ms centered dFlex in ADC/s; allow partial flex recovery"
+}

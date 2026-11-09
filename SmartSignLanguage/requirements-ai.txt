@@ -1,0 +1,7 @@
+# Optional real inference; install into the environment used to train the models.
+# Preserve that environment's exact versions when available for pickle compatibility.
+-r requirements.txt
+numpy>=1.23
+joblib>=1.2
+scikit-learn>=1.2
+tensorflow>=2.15

@@ -1,0 +1,243 @@
+{
+  "evaluation_scope": "within_session_trial_holdout",
+  "warning": "Demo only: labels cannot be evaluated in separate sessions. Trial holdout shares recording sessions with training; scores do not establish performance on a new glove session.",
+  "seed": 42,
+  "motion_checks": "classifier-only",
+  "trial_counts": {
+    "A": 10,
+    "B": 10,
+    "C": 10,
+    "D": 10,
+    "NONE": 10
+  },
+  "session_counts": {
+    "20261015T060326Z_5300e006": {
+      "A": 10,
+      "B": 10,
+      "C": 10,
+      "D": 10,
+      "NONE": 10
+    }
+  },
+  "train_keys": [
+    "20261015T060326Z_5300e006/6",
+    "20261015T060326Z_5300e006/50",
+    "20261015T060326Z_5300e006/14",
+    "20261015T060326Z_5300e006/4",
+    "20261015T060326Z_5300e006/41",
+    "20261015T060326Z_5300e006/30",
+    "20261015T060326Z_5300e006/49",
+    "20261015T060326Z_5300e006/31",
+    "20261015T060326Z_5300e006/26",
+    "20261015T060326Z_5300e006/37",
+    "20261015T060326Z_5300e006/35",
+    "20261015T060326Z_5300e006/36",
+    "20261015T060326Z_5300e006/27",
+    "20261015T060326Z_5300e006/15",
+    "20261015T060326Z_5300e006/24",
+    "20261015T060326Z_5300e006/44",
+    "20261015T060326Z_5300e006/17",
+    "20261015T060326Z_5300e006/3",
+    "20261015T060326Z_5300e006/42",
+    "20261015T060326Z_5300e006/32",
+    "20261015T060326Z_5300e006/43",
+    "20261015T060326Z_5300e006/28",
+    "20261015T060326Z_5300e006/9",
+    "20261015T060326Z_5300e006/23",
+    "20261015T060326Z_5300e006/16",
+    "20261015T060326Z_5300e006/1",
+    "20261015T060326Z_5300e006/46",
+    "20261015T060326Z_5300e006/11",
+    "20261015T060326Z_5300e006/12",
+    "20261015T060326Z_5300e006/2",
+    "20261015T060326Z_5300e006/48",
+    "20261015T060326Z_5300e006/13",
+    "20261015T060326Z_5300e006/38",
+    "20261015T060326Z_5300e006/29",
+    "20261015T060326Z_5300e006/10",
+    "20261015T060326Z_5300e006/39",
+    "20261015T060326Z_5300e006/19"
+  ],
+  "test_keys": [
+    "20261015T060326Z_5300e006/45",
+    "20261015T060326Z_5300e006/8",
+    "20261015T060326Z_5300e006/21",
+    "20261015T060326Z_5300e006/7",
+    "20261015T060326Z_5300e006/40",
+    "20261015T060326Z_5300e006/25",
+    "20261015T060326Z_5300e006/33",
+    "20261015T060326Z_5300e006/20",
+    "20261015T060326Z_5300e006/34",
+    "20261015T060326Z_5300e006/22",
+    "20261015T060326Z_5300e006/47",
+    "20261015T060326Z_5300e006/5",
+    "20261015T060326Z_5300e006/18"
+  ],
+  "accuracy": 1.0,
+  "classifier_accuracy_before_motion_checks": 1.0,
+  "balanced_accuracy": 1.0,
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "NONE"
+  ],
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2
+    ]
+  ],
+  "classification": {
+    "A": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "B": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "C": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "D": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "NONE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    }
+  },
+  "predictions": [
+    {
+      "key": "20261015T060326Z_5300e006/45",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/8",
+      "actual": "A",
+      "predicted": "A"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/21",
+      "actual": "C",
+      "predicted": "C"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/7",
+      "actual": "A",
+      "predicted": "A"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/40",
+      "actual": "D",
+      "predicted": "D"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/25",
+      "actual": "C",
+      "predicted": "C"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/33",
+      "actual": "D",
+      "predicted": "D"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/20",
+      "actual": "B",
+      "predicted": "B"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/34",
+      "actual": "D",
+      "predicted": "D"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/22",
+      "actual": "C",
+      "predicted": "C"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/47",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/5",
+      "actual": "A",
+      "predicted": "A"
+    },
+    {
+      "key": "20261015T060326Z_5300e006/18",
+      "actual": "B",
+      "predicted": "B"
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\20261015T060326Z_5300e006\\samples.csv",
+      "sha256": "03070b9fda4d641be58392bef7cf15bb54a8da5e0ae526a7a59250c9e10e7adc",
+      "reference_sha256": "279409d3590b2c2d2a58dd8db069bbe4e42b5c420e8e533fd3f2efaf81698734"
+    }
+  ],
+  "skipped_empty_files": []
+}
