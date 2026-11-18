@@ -151,15 +151,27 @@ def calibrate(stream):
         if len(calibration) == len(FLEX_COLUMNS):
             break
         print("Chua du 5 ngon dat. Chinh ngon/day duoc bao loi; do lai hai tu the DUOI/GAP ca ban tay.")
-    if prompt("DUOI tay, dat yen de lay moc MPU. ENTER: tiep tuc | Q: dung > ") == "Q":
-        return None
-    countdown()
-    reference = make_imu_reference(capture_stable_pose(stream), sample_ms=10)
-    print("TIEP TUC GIU YEN: khoi tao huong MPU...", flush=True)
-    stream.configure_imu(reference)
-    stream.capture(2.1)
-    if not stream.processor.ready:
-        raise ValueError("MPU chua san sang; giu tay yen va thu lai")
+    while True:
+        if prompt("DUOI tay, dat yen de lay moc MPU. ENTER: tiep tuc | Q: dung > ") == "Q":
+            return None
+        countdown()
+        rows = capture_stable_pose(stream)
+        try:
+            reference = make_imu_reference(rows, sample_ms=10)
+        except ValueError as error:
+            # Retry only a moving hand, never hide malformed sensor data or
+            # a broken transport. Keep the already measured flex endpoints.
+            if not str(error).startswith("MPU dang chuyen dong."):
+                raise
+            print("CANH BAO: MPU con chuyen dong. Dat tay yen tren ban roi nhan Enter de do lai. "
+                  "Giu nguyen hieu chuan flex, khong can chay lai lenh.", flush=True)
+            continue
+        print("TIEP TUC GIU YEN: khoi tao huong MPU...", flush=True)
+        stream.configure_imu(reference)
+        stream.capture(2.1)
+        if stream.processor.ready:
+            break
+        print("CANH BAO: MPU chua san sang. Giu tay yen va nhan Enter de lay lai moc MPU.", flush=True)
     reference.update(flex_pins=FLEX_PINS, fingers=FINGERS, csv_columns=list(CSV_COLUMNS),
                      trial_seconds=1.5, sample_count=150, flex_calibrated=True,
                      flex_calibration_schema=CALIBRATION_SCHEMA, flex_calibration=calibration,
@@ -168,7 +180,9 @@ def calibrate(stream):
                      divider_topology="3V3-flex-ADC-10k-GND",
                      collection_protocol="five-flex-calibrated-100hz-1.5s-v2",
                      imu_source="raw MPU6050 + Python complementary filter (not DMP)",
-                     imu_ranges={"accel_g": 2, "gyro_deg_s": 250, "dlpf_hz": 21})
+                     imu_ranges=stream.imu_ranges if isinstance(getattr(stream, 'imu_ranges', None), dict)
+                     else {"accel_g": 2, "gyro_deg_s": 250, "dlpf_hz": 21})
+    print(f"MPU: +/-{reference['imu_ranges']['accel_g']}g, +/-{reference['imu_ranges']['gyro_deg_s']} do/s")
     return validate_reference(reference)
 
 
@@ -188,9 +202,35 @@ def watch_flex(stream):
         print(" | ".join(parts), flush=True)
 
 
-def preview_trial(rows, label, trial_id):
+def collection_quality(rows, reference=None):
+    """Reject gross channel faults that remain inside the ADC rails.
+
+    Conservative collection-only checks; do not change model preprocessing.
+    """
+    quality = trial_quality(rows, reference)
+    values = np.asarray([[r[k] for k in FLEX_COLUMNS] for r in rows], dtype=float)
+    steps = np.abs(np.diff(values, axis=0))
+    issues = []
+    for i, key in enumerate(FLEX_COLUMNS):
+        isolated = (steps[:, i] > 400) & (np.max(np.delete(steps, i, axis=1), axis=1) < 50)
+        entry = (reference or {}).get("flex_calibration", {}).get(key)
+        shifted = False
+        if entry:
+            margin = max(1000, 8 * abs(entry["closed"] - entry["open"]))
+            shifted = np.median(values[:, i]) > max(entry["open"], entry["closed"]) + margin
+        if np.any(isolated) or shifted:
+            issues.append(f"F{i+1} ({FINGERS[i]}, GPIO {FLEX_PINS[i]}): "
+                          f"ADC {values[:, i].min():g}..{values[:, i].max():g}, "
+                          f"buoc nhay max {steps[:, i].max():g}; "
+                          "nhay dot ngot rieng kenh/lech xa moc hieu chuan")
+    if issues:
+        raise ValueError("NGHI LOI FLEX, KHONG LUU; kiem tra day/cam bien: " + " | ".join(issues))
+    return quality
+
+
+def preview_trial(rows, label, trial_id, reference=None):
     """Summarize the actual captured window before asking whether to save it."""
-    quality = trial_quality(rows)
+    quality = collection_quality(rows, reference)
     print(f"MAU VUA THU: nhan={label}, trial={trial_id}, {len(rows)} mau, {quality['hz']:.2f} Hz")
     print("Flex ADC trung vi [min..max]: " + " | ".join(
         f"F{i+1}={np.median([r[k] for r in rows]):.0f} "
@@ -297,7 +337,7 @@ def collect_session(args):
                         rows = stream.capture(1.5, sample_count=150, after=cursor)
                     finally:
                         stream.sock.sendall(b"STOP\n")
-                    trial_quality(rows)
+                    collection_quality(rows, reference)
                 except ValueError as error:
                     if stream.error:
                         raise stream.error
@@ -305,14 +345,14 @@ def collect_session(args):
                     if stream.recovery_required and not recover_imu(stream, reference, folder, trial_id):
                         return 0
                     continue
-                preview_trial(rows, label, trial_id)
+                preview_trial(rows, label, trial_id, reference)
                 command = prompt("Da lam dung? ENTER: luu | R: bo/thu lai | Q: bo va dung > ", ("", "R", "Q"))
                 if command == "Q":
                     return 0
                 if command == "R":
                     continue
                 quality = save_trial(folder/label_filename(label), rows, args.user_id, sid, trial_id, label,
-                                     columns=CSV_COLUMNS, quality_check=trial_quality)
+                                     columns=CSV_COLUMNS, quality_check=lambda batch: collection_quality(batch, reference))
                 counts[label] += 1
                 print(f"DA LUU {label}: {counts[label]}/{target}, {quality['samples']} mau, {quality['hz']:.2f} Hz")
                 trial_id += 1

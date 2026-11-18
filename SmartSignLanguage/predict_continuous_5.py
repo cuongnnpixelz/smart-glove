@@ -11,14 +11,14 @@ import time
 if __package__:
     from .collect_v2 import SampleStream
     from .serial_transport import SerialTransport
-    from .collect_sequence_5 import calibrate
+    from .collect_sequence_5 import calibrate, collection_quality
     from .five_finger import validate_reference, trial_quality
     from .sensor_pipeline import make_imu_reference
     from .sequence_model_5 import SequenceModel, MODEL_PREFIX, DATA_DIRECTORY
 else:
     from collect_v2 import SampleStream
     from serial_transport import SerialTransport
-    from collect_sequence_5 import calibrate
+    from collect_sequence_5 import calibrate, collection_quality
     from five_finger import validate_reference, trial_quality
     from sensor_pipeline import make_imu_reference
     from sequence_model_5 import SequenceModel, MODEL_PREFIX, DATA_DIRECTORY
@@ -67,7 +67,7 @@ class SlidingRecognizer:
         self.last_prediction = self.last_stamp
         rows = list(self.window)
         try:
-            quality = trial_quality(rows)
+            quality = collection_quality(rows, self.reference)
         except ValueError as error:
             self.clear()
             return {"state": "ERROR", "reason": str(error)}
@@ -106,6 +106,8 @@ def initialize_imu(stream, saved_reference):
                 raise stream.error
             print(f"CHUA ON DINH: {error}. Giu yen, chuong trinh tu do lai.", flush=True)
     reference = deepcopy(saved_reference)
+    if isinstance(getattr(stream, 'imu_ranges', None), dict):
+        reference['imu_ranges'] = dict(stream.imu_ranges)
     reference.update(measured)
     reference["flex_calibrated"] = True
     validate_reference(reference)
@@ -116,14 +118,67 @@ def initialize_imu(stream, saved_reference):
     return reference
 
 
-def recognize(stream, model, reference):
-    detector = SlidingRecognizer(model, reference)
+class WordJoinRecognizer:
+    """Accept one stable word per confirmed NONE interval; never append NONE."""
+    def __init__(self, model, reference):
+        if 'NONE' not in model.manifest['labels']:
+            raise ValueError('Ghep tu can model co NONE')
+        self.detector = SlidingRecognizer(model, reference, confirmations=1)
+        self.words = []
+        self.clear()
+
+    def clear(self):
+        self.detector.clear()
+        self.armed = False
+        self.label = None
+        self.since = None
+
+    def update(self, batch):
+        # A discontinuity must also revoke permission to emit a word.
+        previous = self.detector.last_stamp
+        for row in batch:
+            stamp = row['timestamp']
+            if previous is not None and (stamp <= previous or stamp - previous > 20):
+                self.clear()
+            previous = stamp
+        event = self.detector.update(batch)
+        if event is None:
+            return None
+        if event['state'] != 'RESULT':
+            self.clear()
+            return event
+        label, stamp = event['label'], event['timestamp']
+        if label != self.label:
+            self.label, self.since = label, stamp
+        stable_ms = stamp - self.since
+        if not self.armed:
+            if label == 'NONE' and stable_ms >= 500:
+                self.armed = True
+                self.label = self.since = None
+                self.detector.clear()
+                return {'state': 'WAIT', 'reason': 'SAN SANG - lam mot tu nhu luc thu, cho den khi DA NHAN'}
+            return None
+        if label == 'NONE' or stable_ms < 750:
+            return None
+        self.words.append(label)
+        self.clear()
+        return dict(event, words=list(self.words))
+
+
+def recognize(stream, model, reference, join_words=False, words=None, diagnostics=None):
+    detector = WordJoinRecognizer(model, reference) if join_words else SlidingRecognizer(model, reference)
+    if join_words and words is not None:
+        detector.words = words
     # Start after warmup. No pre-initialization/backlogged samples enter a window.
     with stream.condition:
         cursor = stream.serial
     send_state(stream.sock, "WAIT")
-    print("SAN SANG: tao A/B/C/D hoac tha long (NONE); giu moi ky hieu khoang 2 giay.", flush=True)
-    print("Tu cap nhat moi 0.25 giay tren cua so 1.5 giay. Ctrl+C de dung.", flush=True)
+    if join_words:
+        print('GHEP TU: tha long den khi SAN SANG; lam mot tu, cho DA NHAN; tha long de nhan tu tiep.', flush=True)
+        print('Can NONE on dinh giua hai tu. Khong noi lien dong tac. Ctrl+C de dung.', flush=True)
+    else:
+        print("SAN SANG: lam tu da hoc hoac tha long (NONE); giu moi ky hieu khoang 2 giay.", flush=True)
+        print("Tu cap nhat moi 0.25 giay tren cua so 1.5 giay. Ctrl+C de dung.", flush=True)
     last_data = time.monotonic()
     stalled = False
     while True:
@@ -145,8 +200,27 @@ def recognize(stream, model, reference):
         event = detector.update(batch)
         if event is None:
             continue
+        if diagnostics is not None:
+            raw_detector = detector.detector if join_words else detector
+            rows = list(raw_detector.window)
+            diagnostics.write(json.dumps({"event": event, "rows": rows}) + "\n")
+            diagnostics.flush()
+            if rows and event["state"] == "RESULT":
+                import numpy as np
+                values = []
+                for i in range(1, 6):
+                    key = f"flex_{i}"
+                    c = reference["flex_calibration"][key]
+                    median = float(np.median([r[key] for r in rows]))
+                    values.append(f"F{i}={(median-c['open'])/(c['closed']-c['open']):.2f}")
+                print("FLEX CHUAN HOA (0=duoi, 1=gap theo moc): " + " | ".join(values), flush=True)
         if event["state"] == "RESULT":
             send_result(stream.sock, event["label"])
+            if join_words:
+                print('DA NHAN: ' + event['label'].replace('_', ' '), flush=True)
+                print('CHUOI TU: ' + ' '.join(w.replace('_', ' ') for w in event['words']), flush=True)
+                print('THA LONG - cho SAN SANG truoc tu tiep.', flush=True)
+                continue
             text = "NONE (khong phai ky hieu da hoc)" if event["label"] == "NONE" else event["label"]
             print(f"KET QUA: {text} | {event['hz']:.2f} Hz", flush=True)
         else:
@@ -176,6 +250,8 @@ def main(argv=None):
     parser.add_argument("--esp32-port", type=int, default=5000)
     parser.add_argument("--serial-port", help="Recognize over USB, e.g. COM3, at 230400 baud")
     parser.add_argument("--model", type=Path)
+    parser.add_argument('--join-words', action='store_true', help='Append stable words once, requiring confirmed NONE between words')
+    parser.add_argument('--diagnostics', action='store_true', help='Save raw prediction windows and calibration; print normalized flex')
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--reference", type=Path, help="Existing five-flex calibration JSON")
     group.add_argument("--recalibrate", action="store_true", help="Calibrate all five fingers together before continuous recognition")
@@ -183,6 +259,8 @@ def main(argv=None):
     try:
         folder = args.model or latest_model()
         model = SequenceModel(folder)
+        if args.join_words and 'NONE' not in model.manifest['labels']:
+            raise ValueError('Ghep tu can model co NONE')
         saved_reference = None
         print(f"MODEL 5 NGON: {folder}")
         print("NHAN: " + ", ".join(model.manifest["labels"]))
@@ -200,6 +278,7 @@ def main(argv=None):
     except (OSError, ValueError, KeyError) as error:
         print(f"LOI CAU HINH: {error}")
         return 1
+    words = []
     try:
         while True:
             stream = None
@@ -219,7 +298,20 @@ def main(argv=None):
                     reference = saved_reference
                 else:
                     reference = initialize_imu(stream, saved_reference)
-                recognize(stream, model, reference)
+                if args.diagnostics:
+                    from datetime import datetime, timezone
+                    import uuid
+                    log_folder = BASE.parent / '.runtime/word_diagnostics' / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '_' + uuid.uuid4().hex[:8])
+                    log_folder.mkdir(parents=True, exist_ok=False)
+                    (log_folder/'reference.json').write_text(json.dumps(reference, indent=2), encoding='utf-8')
+                    (log_folder/'model.json').write_text(json.dumps({'path': str(folder.resolve()), 'sha256': model.manifest['model_sha256']}), encoding='utf-8')
+                    print(f"LUU CHAN DOAN: {log_folder}", flush=True)
+                    with (log_folder/'windows.jsonl').open('w', encoding='utf-8') as log:
+                        recognize(stream, model, reference, join_words=args.join_words, words=words, diagnostics=log)
+                elif args.join_words:
+                    recognize(stream, model, reference, join_words=True, words=words)
+                else:
+                    recognize(stream, model, reference)
             except (OSError, ValueError) as error:
                 print(f"TAM DUNG: {error}. Tu noi lai; giu tay yen de khoi tao MPU.", flush=True)
                 if sock:

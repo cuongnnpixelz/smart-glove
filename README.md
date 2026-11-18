@@ -241,15 +241,3 @@ gồm nạp mô hình 3D, nhận WebSocket, gập tự động không ghi mốc,
 kết nối lại. Firmware đã build thành công với ESP32 core 2.0.14, board
 `esp32:esp32:esp32` (Flash 58%, RAM tĩnh 13%). Các file mô hình hiện có đã nạp và
 suy luận thử được. Chưa xác minh độ chính xác hoặc thời gian đáp ứng trên găng thật.
-
-
-## Cấu hình Wi-Fi sau khi tải dự án từ GitHub
-
-Trước khi biên dịch firmware, sao chép `wifi_secrets.example.h` thành
-`wifi_secrets.h` trong cùng thư mục với sketch đang dùng (`mophong_com/`,
-`mophong_wireless/`, hoặc `firmware_archive/`). Điền tên mạng và mật khẩu
-Wi-Fi của bạn trong tệp mới. `wifi_secrets.h` được Git bỏ qua; không tải tệp
-này lên GitHub. Trên máy hiện tại, cấu hình Wi-Fi đã được giữ trong tệp cục bộ.
-
-Kho chứa mã nguồn, dữ liệu thu, mô hình đã huấn luyện, tài liệu và báo cáo.
-Môi trường chạy, cache, tệp làm việc tạm và cấu hình riêng của máy được bỏ qua.

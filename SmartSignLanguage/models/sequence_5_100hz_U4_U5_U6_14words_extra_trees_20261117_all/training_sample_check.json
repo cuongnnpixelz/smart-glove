@@ -1,0 +1,1783 @@
+{
+  "scope": "training_data_resubstitution_NOT_independent_test",
+  "seed": 42,
+  "per_label": 20,
+  "correct": 300,
+  "total": 300,
+  "labels": [
+    "AN",
+    "BAN",
+    "BUON_BA",
+    "CAM_ON",
+    "CHAO",
+    "DANG_LAM",
+    "DI_DAU",
+    "GI",
+    "KHOE",
+    "NONE",
+    "O_DAU",
+    "TEN",
+    "THICH",
+    "TOI",
+    "TUYET_VOI"
+  ],
+  "confusion_matrix": [
+    [
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20
+    ]
+  ],
+  "predictions": [
+    {
+      "key": "20261117T044032Z_7b6712d8/8",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T045249Z_bee58860/5",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T043658Z_8f18d2cc/6",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T045249Z_bee58860/2",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T045249Z_bee58860/9",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044643Z_51ad34c8/6",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T043658Z_8f18d2cc/5",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T043658Z_8f18d2cc/2",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044032Z_7b6712d8/6",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044032Z_7b6712d8/9",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044643Z_51ad34c8/5",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T043658Z_8f18d2cc/3",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T045249Z_bee58860/10",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044643Z_51ad34c8/3",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044643Z_51ad34c8/10",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T045249Z_bee58860/3",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044643Z_51ad34c8/9",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044032Z_7b6712d8/1",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044032Z_7b6712d8/10",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261117T044032Z_7b6712d8/7",
+      "actual": "AN",
+      "predicted": "AN"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/31",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/38",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/32",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/36",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/35",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/35",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/37",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/34",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/33",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/37",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/34",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/39",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/32",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/39",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/37",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/36",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/37",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/40",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/38",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/34",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/53",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/58",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/85",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/48",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/84",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/54",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/46",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/59",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/88",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/55",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/90",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/60",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/44",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/47",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/82",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/60",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/81",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/50",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/42",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261113T083058Z_89998799/53",
+      "actual": "BUON_BA",
+      "predicted": "BUON_BA"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/29",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/30",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/24",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/22",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/25",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/26",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/30",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/29",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/28",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/23",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/25",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/21",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/21",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/28",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/27",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/21",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/27",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/24",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/23",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/23",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/43",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/46",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/48",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/41",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/48",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/50",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/50",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/43",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/49",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/43",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/45",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/48",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/50",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/47",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/42",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/46",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/49",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/47",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/49",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/44",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261113T083058Z_89998799/101",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/120",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/42",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/114",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/112",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/116",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/113",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/105",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/111",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/49",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/117",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/43",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/110",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/107",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/118",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T083058Z_89998799/108",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/114",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/118",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/48",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/50",
+      "actual": "DANG_LAM",
+      "predicted": "DANG_LAM"
+    },
+    {
+      "key": "20261117T090511Z_79b6377a/5",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085333Z_3ebd9e28/8",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/1",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085333Z_3ebd9e28/7",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085333Z_3ebd9e28/4",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090210Z_06144246/8",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/9",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/4",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/7",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/10",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090511Z_79b6377a/1",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090210Z_06144246/4",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085333Z_3ebd9e28/2",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090511Z_79b6377a/2",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085333Z_3ebd9e28/3",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090511Z_79b6377a/9",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/6",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090210Z_06144246/5",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T090210Z_06144246/3",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261117T085812Z_6b972fa7/5",
+      "actual": "DI_DAU",
+      "predicted": "DI_DAU"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/22",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/79",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/72",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/91",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/76",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/64",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/92",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/30",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/71",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/95",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/26",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/78",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/98",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/61",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/100",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/28",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/75",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T083058Z_89998799/70",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/96",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/23",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/17",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/14",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/20",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/13",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/18",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/16",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/17",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/20",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/19",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/15",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/16",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/12",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/13",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/16",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/19",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/19",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/18",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/20",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/12",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/17",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/29",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/23",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/52",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T083058Z_89998799/124",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/52",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/52",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/60",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/58",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T083058Z_89998799/140",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/8",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/54",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/12",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/15",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/13",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/59",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/52",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/60",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261113T092052Z_bb01a1cb/9",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/58",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/60",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/1",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/6",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053932Z_bb39dab4/5",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053633Z_35f9128b/5",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/9",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/7",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053932Z_bb39dab4/7",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053633Z_35f9128b/9",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/2",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/10",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053932Z_bb39dab4/8",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/1",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/4",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053932Z_bb39dab4/4",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053932Z_bb39dab4/1",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/6",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T052957Z_b645b986/9",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053633Z_35f9128b/3",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/8",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261117T053326Z_b9d41f12/5",
+      "actual": "O_DAU",
+      "predicted": "O_DAU"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/106",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/92",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/33",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/108",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/107",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/105",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/110",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/102",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/85",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/93",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/89",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/35",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/32",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/86",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/101",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/103",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/87",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/83",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T083058Z_89998799/98",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/40",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/80",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/76",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/23",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/73",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/25",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/40",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/79",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/14",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/21",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/38",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/27",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/78",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/72",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/71",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/11",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/20",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/18",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T075928Z_ba41701b/77",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/30",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261113T083058Z_89998799/28",
+      "actual": "THICH",
+      "predicted": "THICH"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/10",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/3",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/5",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/7",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/9",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/10",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/4",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/6",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/9",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T064218Z_8297407a/6",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/6",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/2",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/8",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/4",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/7",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/7",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T062558Z_234e2dfd/3",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/1",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T070400Z_a5d293b4/8",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261111T065341Z_0c930f2a/3",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/4",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/2",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/4",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/1",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084705Z_c660f3e7/9",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/9",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084046Z_3bcd4880/7",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084046Z_3bcd4880/9",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/1",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/7",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/5",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084705Z_c660f3e7/7",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084046Z_3bcd4880/10",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/7",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084705Z_c660f3e7/3",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084046Z_3bcd4880/2",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084432Z_859eba36/6",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/2",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084944Z_0f5ee55d/10",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    },
+    {
+      "key": "20261117T084705Z_c660f3e7/1",
+      "actual": "TUYET_VOI",
+      "predicted": "TUYET_VOI"
+    }
+  ]
+}

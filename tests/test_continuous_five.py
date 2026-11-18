@@ -17,6 +17,17 @@ def samples(start, count):
 
 
 class ContinuousFiveTests(unittest.TestCase):
+    def test_isolated_flex_jump_is_rejected_before_prediction(self):
+        model = Mock()
+        detector = app.SlidingRecognizer(model, reference())
+        batch = samples(0, 150)
+        batch[75]['flex_4'] += 650
+        event = detector.update(batch)
+        self.assertEqual(event['state'], 'ERROR')
+        self.assertIn('F4', event['reason'])
+        model.predict.assert_not_called()
+        self.assertEqual(len(detector.window), 0)
+
     def test_held_letter_repeats_without_rest_or_enter_and_uses_full_window(self):
         model = Mock()
         model.predict.return_value = "A"

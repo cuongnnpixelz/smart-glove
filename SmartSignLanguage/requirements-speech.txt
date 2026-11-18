@@ -1,0 +1,4 @@
+# Install in the same Python environment as sentence recognition.
+edge-tts>=7.2,<8
+imageio-ffmpeg>=0.6,<0.7
+gTTS>=2.5,<3

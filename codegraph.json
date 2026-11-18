@@ -1,0 +1,9 @@
+{
+  "extensions": { ".ino": "cpp" },
+  "exclude": [
+    ".bridge-venv/", ".runtime/", ".firmware-*/", "firmware_archive/",
+    "**/__pycache__/", "SmartSignLanguage/models/",
+    "SmartSignLanguage/sequence_data*/", "SmartSignLanguage/phrase_data*/",
+    "three.min.js"
+  ]
+}

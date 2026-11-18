@@ -13,7 +13,8 @@
 // WIFI LAPTOP HOTSPOT
 // =====================================================
 
-#include "wifi_secrets.h"
+const char* WIFI_NAME = "iphone";
+const char* WIFI_PASSWORD = "12345678a";
 
 // IP cố định của ESP32
 IPAddress LOCAL_IP(192, 168, 137, 115);
@@ -209,6 +210,7 @@ void processPythonCommand(char* line)
 {
   if (strcmp(line, "RAW5_100") == 0)
   {
+    pythonClient.print("IMU_RANGE,4,1000,21\n");
     rawProtocolV5 = true;
     rawProtocolV2 = false;
     sampleInterval = 10;
@@ -592,11 +594,11 @@ void setup()
   }
 
   mpu.setAccelerometerRange(
-    MPU6050_RANGE_2_G
+    MPU6050_RANGE_4_G
   );
 
   mpu.setGyroRange(
-    MPU6050_RANGE_250_DEG
+    MPU6050_RANGE_1000_DEG
   );
 
   mpu.setFilterBandwidth(

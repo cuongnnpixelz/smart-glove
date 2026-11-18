@@ -13,12 +13,14 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/queue.h>
 #include <freertos/task.h>
+#include "glove_audio.h"
 
 // =====================================================
 // WIFI LAPTOP HOTSPOT
 // =====================================================
 
-#include "wifi_secrets.h"
+const char* WIFI_NAME = "iphone";
+const char* WIFI_PASSWORD = "12345678a";
 
 // IP cố định của ESP32
 IPAddress LOCAL_IP(192, 168, 137, 115);
@@ -113,7 +115,7 @@ bool usbStreaming = false;
 unsigned long lastUsbCommand = 0;
 const unsigned long USB_LEASE_MS = 6000;
 uint32_t nextUsbSample = 0;
-char usbCommand[48] = {0};
+char usbCommand[96] = {0};
 size_t usbCommandLength = 0;
 bool discardUsbCommand = false;
 void connectWiFi();
@@ -276,6 +278,8 @@ void processPythonCommand(char* line)
   }
   if (strcmp(line, "RAW5_100") == 0)
   {
+    const char rangePacket[] = "IMU_RANGE,4,1000,21\n";
+    writePacket(rangePacket, sizeof(rangePacket) - 1);
     rawProtocolV5 = true;
     rawProtocolV2 = false;
     sampleInterval = 10;
@@ -395,6 +399,7 @@ void processPythonCommand(char* line)
 
 void returnToWiFi()
 {
+  GloveAudio::abort();
   usbStreaming = false;
   usbMode = false;
   disconnectPython();
@@ -426,6 +431,11 @@ void processUsbCommand(char* line)
     return;
   }
   if (!usbMode) return;
+  if (GloveAudio::command(line))
+  {
+    lastUsbCommand = millis();
+    return;
+  }
   if (strcmp(line, "IDLE") == 0)
   {
     returnToWiFi();
@@ -453,9 +463,11 @@ void processUsbCommand(char* line)
 
 void readUsb()
 {
-  for (int budget = 64; budget > 0 && Serial.available(); --budget)
+  for (int budget = 256; budget > 0 && Serial.available(); --budget)
   {
-    const char c = Serial.read();
+    const uint8_t byte = Serial.read();
+    if (GloveAudio::consume(byte)) continue;
+    const char c = static_cast<char>(byte);
     if (c == '\r') continue;
     if (c == '\n')
     {
@@ -679,6 +691,7 @@ void resetFlexHistory()
 
 void setup()
 {
+  Serial.setRxBufferSize(4096);
   Serial.begin(230400);
 
   delay(1200);
@@ -756,11 +769,11 @@ void setup()
   }
 
   mpu.setAccelerometerRange(
-    MPU6050_RANGE_2_G
+    MPU6050_RANGE_4_G
   );
 
   mpu.setGyroRange(
-    MPU6050_RANGE_250_DEG
+    MPU6050_RANGE_1000_DEG
   );
 
   mpu.setFilterBandwidth(
@@ -793,6 +806,7 @@ void setup()
 void loop()
 {
   readUsb();
+  GloveAudio::service();
   if (usbMode)
   {
     if (millis() - lastUsbCommand > USB_LEASE_MS)

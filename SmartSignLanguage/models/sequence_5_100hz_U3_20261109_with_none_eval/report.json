@@ -1,0 +1,704 @@
+{
+  "evaluation_scope": "within_session_trial_holdout",
+  "warning": "Demo only: labels cannot be evaluated in separate sessions. Trial holdout shares recording sessions with training; scores do not establish performance on a new glove session.",
+  "seed": 42,
+  "motion_checks": "classifier-only",
+  "trial_counts": {
+    "CHAO": 10,
+    "CAM_ON": 10,
+    "TOI": 10,
+    "XIN_LOI": 10,
+    "KHOE": 10,
+    "GAP": 10,
+    "BAN": 10,
+    "TEN": 10,
+    "LAI": 10,
+    "HEN": 10,
+    "GI": 10,
+    "DI_DAU_VAY": 10,
+    "NONE": 30
+  },
+  "session_counts": {
+    "20261109T083555Z_dc0cdf8c": {
+      "CHAO": 10,
+      "CAM_ON": 10,
+      "TOI": 10,
+      "XIN_LOI": 10,
+      "KHOE": 10,
+      "GAP": 10,
+      "BAN": 10,
+      "TEN": 10,
+      "LAI": 10,
+      "HEN": 10
+    },
+    "20261109T093811Z_e9e6a3f8": {
+      "GI": 10,
+      "DI_DAU_VAY": 10
+    },
+    "20261109T100133Z_6825534c": {
+      "NONE": 30
+    }
+  },
+  "train_keys": [
+    "20261109T083555Z_dc0cdf8c/2",
+    "20261109T083555Z_dc0cdf8c/3",
+    "20261109T083555Z_dc0cdf8c/4",
+    "20261109T083555Z_dc0cdf8c/5",
+    "20261109T083555Z_dc0cdf8c/6",
+    "20261109T083555Z_dc0cdf8c/8",
+    "20261109T083555Z_dc0cdf8c/9",
+    "20261109T083555Z_dc0cdf8c/10",
+    "20261109T083555Z_dc0cdf8c/11",
+    "20261109T083555Z_dc0cdf8c/12",
+    "20261109T083555Z_dc0cdf8c/13",
+    "20261109T083555Z_dc0cdf8c/16",
+    "20261109T083555Z_dc0cdf8c/17",
+    "20261109T083555Z_dc0cdf8c/18",
+    "20261109T083555Z_dc0cdf8c/19",
+    "20261109T083555Z_dc0cdf8c/20",
+    "20261109T083555Z_dc0cdf8c/21",
+    "20261109T083555Z_dc0cdf8c/22",
+    "20261109T083555Z_dc0cdf8c/23",
+    "20261109T083555Z_dc0cdf8c/24",
+    "20261109T083555Z_dc0cdf8c/26",
+    "20261109T083555Z_dc0cdf8c/27",
+    "20261109T083555Z_dc0cdf8c/28",
+    "20261109T083555Z_dc0cdf8c/30",
+    "20261109T083555Z_dc0cdf8c/31",
+    "20261109T083555Z_dc0cdf8c/32",
+    "20261109T083555Z_dc0cdf8c/33",
+    "20261109T083555Z_dc0cdf8c/34",
+    "20261109T083555Z_dc0cdf8c/35",
+    "20261109T083555Z_dc0cdf8c/36",
+    "20261109T083555Z_dc0cdf8c/37",
+    "20261109T083555Z_dc0cdf8c/40",
+    "20261109T083555Z_dc0cdf8c/41",
+    "20261109T083555Z_dc0cdf8c/43",
+    "20261109T083555Z_dc0cdf8c/45",
+    "20261109T083555Z_dc0cdf8c/46",
+    "20261109T083555Z_dc0cdf8c/47",
+    "20261109T083555Z_dc0cdf8c/48",
+    "20261109T083555Z_dc0cdf8c/49",
+    "20261109T083555Z_dc0cdf8c/50",
+    "20261109T083555Z_dc0cdf8c/51",
+    "20261109T083555Z_dc0cdf8c/52",
+    "20261109T083555Z_dc0cdf8c/53",
+    "20261109T083555Z_dc0cdf8c/54",
+    "20261109T083555Z_dc0cdf8c/55",
+    "20261109T083555Z_dc0cdf8c/56",
+    "20261109T083555Z_dc0cdf8c/59",
+    "20261109T083555Z_dc0cdf8c/60",
+    "20261109T083555Z_dc0cdf8c/62",
+    "20261109T083555Z_dc0cdf8c/63",
+    "20261109T083555Z_dc0cdf8c/64",
+    "20261109T083555Z_dc0cdf8c/65",
+    "20261109T083555Z_dc0cdf8c/66",
+    "20261109T083555Z_dc0cdf8c/67",
+    "20261109T083555Z_dc0cdf8c/69",
+    "20261109T083555Z_dc0cdf8c/70",
+    "20261109T083555Z_dc0cdf8c/71",
+    "20261109T083555Z_dc0cdf8c/72",
+    "20261109T083555Z_dc0cdf8c/74",
+    "20261109T083555Z_dc0cdf8c/76",
+    "20261109T083555Z_dc0cdf8c/77",
+    "20261109T083555Z_dc0cdf8c/78",
+    "20261109T083555Z_dc0cdf8c/79",
+    "20261109T083555Z_dc0cdf8c/80",
+    "20261109T083555Z_dc0cdf8c/81",
+    "20261109T083555Z_dc0cdf8c/82",
+    "20261109T083555Z_dc0cdf8c/83",
+    "20261109T083555Z_dc0cdf8c/84",
+    "20261109T083555Z_dc0cdf8c/85",
+    "20261109T083555Z_dc0cdf8c/86",
+    "20261109T083555Z_dc0cdf8c/89",
+    "20261109T083555Z_dc0cdf8c/90",
+    "20261109T083555Z_dc0cdf8c/91",
+    "20261109T083555Z_dc0cdf8c/92",
+    "20261109T083555Z_dc0cdf8c/93",
+    "20261109T083555Z_dc0cdf8c/94",
+    "20261109T083555Z_dc0cdf8c/96",
+    "20261109T083555Z_dc0cdf8c/97",
+    "20261109T083555Z_dc0cdf8c/99",
+    "20261109T083555Z_dc0cdf8c/100",
+    "20261109T093811Z_e9e6a3f8/1",
+    "20261109T093811Z_e9e6a3f8/2",
+    "20261109T093811Z_e9e6a3f8/3",
+    "20261109T093811Z_e9e6a3f8/4",
+    "20261109T093811Z_e9e6a3f8/5",
+    "20261109T093811Z_e9e6a3f8/7",
+    "20261109T093811Z_e9e6a3f8/9",
+    "20261109T093811Z_e9e6a3f8/10",
+    "20261109T093811Z_e9e6a3f8/12",
+    "20261109T093811Z_e9e6a3f8/13",
+    "20261109T093811Z_e9e6a3f8/14",
+    "20261109T093811Z_e9e6a3f8/15",
+    "20261109T093811Z_e9e6a3f8/17",
+    "20261109T093811Z_e9e6a3f8/18",
+    "20261109T093811Z_e9e6a3f8/19",
+    "20261109T093811Z_e9e6a3f8/20",
+    "20261109T100133Z_6825534c/1",
+    "20261109T100133Z_6825534c/2",
+    "20261109T100133Z_6825534c/3",
+    "20261109T100133Z_6825534c/4",
+    "20261109T100133Z_6825534c/5",
+    "20261109T100133Z_6825534c/6",
+    "20261109T100133Z_6825534c/7",
+    "20261109T100133Z_6825534c/8",
+    "20261109T100133Z_6825534c/9",
+    "20261109T100133Z_6825534c/10",
+    "20261109T100133Z_6825534c/11",
+    "20261109T100133Z_6825534c/12",
+    "20261109T100133Z_6825534c/13",
+    "20261109T100133Z_6825534c/14",
+    "20261109T100133Z_6825534c/15",
+    "20261109T100133Z_6825534c/16",
+    "20261109T100133Z_6825534c/18",
+    "20261109T100133Z_6825534c/19",
+    "20261109T100133Z_6825534c/20",
+    "20261109T100133Z_6825534c/21",
+    "20261109T100133Z_6825534c/22",
+    "20261109T100133Z_6825534c/23",
+    "20261109T100133Z_6825534c/25",
+    "20261109T100133Z_6825534c/26",
+    "20261109T100133Z_6825534c/27",
+    "20261109T100133Z_6825534c/28",
+    "20261109T100133Z_6825534c/29",
+    "20261109T100133Z_6825534c/30"
+  ],
+  "test_keys": [
+    "20261109T083555Z_dc0cdf8c/1",
+    "20261109T083555Z_dc0cdf8c/7",
+    "20261109T083555Z_dc0cdf8c/14",
+    "20261109T083555Z_dc0cdf8c/15",
+    "20261109T083555Z_dc0cdf8c/25",
+    "20261109T083555Z_dc0cdf8c/29",
+    "20261109T083555Z_dc0cdf8c/38",
+    "20261109T083555Z_dc0cdf8c/39",
+    "20261109T083555Z_dc0cdf8c/42",
+    "20261109T083555Z_dc0cdf8c/44",
+    "20261109T083555Z_dc0cdf8c/57",
+    "20261109T083555Z_dc0cdf8c/58",
+    "20261109T083555Z_dc0cdf8c/61",
+    "20261109T083555Z_dc0cdf8c/68",
+    "20261109T083555Z_dc0cdf8c/73",
+    "20261109T083555Z_dc0cdf8c/75",
+    "20261109T083555Z_dc0cdf8c/87",
+    "20261109T083555Z_dc0cdf8c/88",
+    "20261109T083555Z_dc0cdf8c/95",
+    "20261109T083555Z_dc0cdf8c/98",
+    "20261109T093811Z_e9e6a3f8/6",
+    "20261109T093811Z_e9e6a3f8/8",
+    "20261109T093811Z_e9e6a3f8/11",
+    "20261109T093811Z_e9e6a3f8/16",
+    "20261109T100133Z_6825534c/17",
+    "20261109T100133Z_6825534c/24"
+  ],
+  "accuracy": 0.9230769230769231,
+  "classifier_accuracy_before_motion_checks": 0.9230769230769231,
+  "balanced_accuracy": 0.9230769230769231,
+  "labels": [
+    "BAN",
+    "CAM_ON",
+    "CHAO",
+    "DI_DAU_VAY",
+    "GAP",
+    "GI",
+    "HEN",
+    "KHOE",
+    "LAI",
+    "NONE",
+    "TEN",
+    "TOI",
+    "XIN_LOI"
+  ],
+  "confusion_matrix": [
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ]
+  ],
+  "classification": {
+    "BAN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "CAM_ON": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "CHAO": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "DI_DAU_VAY": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 2.0
+    },
+    "GAP": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "GI": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "HEN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "KHOE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "LAI": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "NONE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "TEN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "TOI": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "XIN_LOI": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 2.0
+    },
+    "accuracy": 0.9230769230769231,
+    "macro avg": {
+      "precision": 0.9487179487179487,
+      "recall": 0.9230769230769231,
+      "f1-score": 0.917948717948718,
+      "support": 26.0
+    },
+    "weighted avg": {
+      "precision": 0.9487179487179487,
+      "recall": 0.9230769230769231,
+      "f1-score": 0.917948717948718,
+      "support": 26.0
+    }
+  },
+  "predictions": [
+    {
+      "key": "20261109T083555Z_dc0cdf8c/1",
+      "actual": "CHAO",
+      "predicted": "XIN_LOI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/7",
+      "actual": "CHAO",
+      "predicted": "CHAO"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/14",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/15",
+      "actual": "CAM_ON",
+      "predicted": "CAM_ON"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/25",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/29",
+      "actual": "TOI",
+      "predicted": "TOI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/38",
+      "actual": "XIN_LOI",
+      "predicted": "XIN_LOI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/39",
+      "actual": "XIN_LOI",
+      "predicted": "XIN_LOI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/42",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/44",
+      "actual": "KHOE",
+      "predicted": "KHOE"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/57",
+      "actual": "GAP",
+      "predicted": "GAP"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/58",
+      "actual": "GAP",
+      "predicted": "GAP"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/61",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/68",
+      "actual": "BAN",
+      "predicted": "BAN"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/73",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/75",
+      "actual": "TEN",
+      "predicted": "TEN"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/87",
+      "actual": "LAI",
+      "predicted": "LAI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/88",
+      "actual": "LAI",
+      "predicted": "LAI"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/95",
+      "actual": "HEN",
+      "predicted": "HEN"
+    },
+    {
+      "key": "20261109T083555Z_dc0cdf8c/98",
+      "actual": "HEN",
+      "predicted": "HEN"
+    },
+    {
+      "key": "20261109T093811Z_e9e6a3f8/6",
+      "actual": "GI",
+      "predicted": "GI"
+    },
+    {
+      "key": "20261109T093811Z_e9e6a3f8/8",
+      "actual": "GI",
+      "predicted": "DI_DAU_VAY"
+    },
+    {
+      "key": "20261109T093811Z_e9e6a3f8/11",
+      "actual": "DI_DAU_VAY",
+      "predicted": "DI_DAU_VAY"
+    },
+    {
+      "key": "20261109T093811Z_e9e6a3f8/16",
+      "actual": "DI_DAU_VAY",
+      "predicted": "DI_DAU_VAY"
+    },
+    {
+      "key": "20261109T100133Z_6825534c/17",
+      "actual": "NONE",
+      "predicted": "NONE"
+    },
+    {
+      "key": "20261109T100133Z_6825534c/24",
+      "actual": "NONE",
+      "predicted": "NONE"
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\ban.csv",
+      "sha256": "516d0e1e021a98295ddf1ed51b43228052acc377d2b590802086558e13d3205b",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\cam_on.csv",
+      "sha256": "4647155eb9021f4422087f2dd9db3aae74414c6fe0785e28a80b61b8f09c9370",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\chao.csv",
+      "sha256": "23122d0563310cc58fce2105ce26a401811e768bfebedec76758a3bf2d2db6f5",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\gap.csv",
+      "sha256": "86369925456daf4e4316ac8304f7cf2a97c1bd762d414aa704da2a1affca902b",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\hen.csv",
+      "sha256": "6154431f1d02409bd19cf18ff62be0fbd4b5f510657598f958c4dfa9afd6b3b2",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\khoe.csv",
+      "sha256": "68a22ceabde923431026ef6093386ccdcf9f1fd3a1b45c3fc759ae3402b4f199",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\lai.csv",
+      "sha256": "4c175ec5407044426a30c817df45c62d214679151cb3f51494a43de152fb516c",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\ten.csv",
+      "sha256": "1127c2708a35842c67a1bf695513d5d142bbaa7fff1126d13924d4467d25ca66",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\toi.csv",
+      "sha256": "2b42b93c38a4033deb8c019757d3934ce41a297c3c433f252b90d64d4394a099",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_15-35-55__U03__TU_TUY_CHON__dc0cdf8c\\xin_loi.csv",
+      "sha256": "09099703a6820bca9bc0c943ea52c2543e42170e5461d02e9843823270164203",
+      "reference_sha256": "881bc0cffadc549c08e5c37a05c928d03b281e87b1486357439c797f1b85f513"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_16-38-11__U03__TU_TUY_CHON__e9e6a3f8\\di_dau_vay.csv",
+      "sha256": "7a82ea6cee51a27ac6b6143672ca54dd02f653427f861c0ebf7709863d7dadec",
+      "reference_sha256": "8d8432b5c444b1cad52def0013f839bd3f5af088ef1228c7bbf407852b2fbf83"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_16-38-11__U03__TU_TUY_CHON__e9e6a3f8\\gi.csv",
+      "sha256": "9c02ab9fd9e9ff49a55002efdf966c4a22ac3facc37feeccf28553574df7df44",
+      "reference_sha256": "8d8432b5c444b1cad52def0013f839bd3f5af088ef1228c7bbf407852b2fbf83"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\sequence_data_5_100hz\\U3\\2026-11-09_17-01-33__U03__NONE__6825534c\\none.csv",
+      "sha256": "b62f4537480a1c0782e773b43c95044ef6c4b45d1527f9eddec2a09ea68c707f",
+      "reference_sha256": "b9db1222661f854881c8bb2b7a386242abfa362c6d2c0ffce85a59925b7b633d"
+    }
+  ],
+  "skipped_empty_files": []
+}

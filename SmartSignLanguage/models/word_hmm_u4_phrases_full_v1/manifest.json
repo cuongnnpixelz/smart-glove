@@ -1,0 +1,14 @@
+{
+  "schema": "word-loop-hmm-five-flex-v1",
+  "labels": [
+    "BAN",
+    "CAM_ON",
+    "CHAO",
+    "KHOE",
+    "TOI"
+  ],
+  "training_trials": 341,
+  "evaluation_scope": "full_data_training_fit_only",
+  "model_sha256": "22d06860fec518c0238cac382dd2ee1d8e5c42f6dfd63e60f3cc7395c57752fe",
+  "separate_evaluation": "SmartSignLanguage\\models\\word_hmm_u4_phrases_v1\\report.json"
+}

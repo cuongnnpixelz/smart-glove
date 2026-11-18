@@ -85,7 +85,7 @@ def load_trials(root, backend=legacy_backend, progress=None, allow_no_none=False
         if hasattr(backend, "validate_reference"):
             backend.validate_reference(reference)
         if (reference.get("schema"), reference.get("processor"), reference.get("sample_ms"),
-                reference.get("trial_seconds")) != ("sequence-imu-v1", backend.PROCESSOR, backend.SAMPLE_MS, backend.DURATION_MS/1000):
+                reference.get("trial_seconds")) != ("sequence-imu-v1", backend.PROCESSOR, backend.SAMPLE_MS, None if getattr(backend, 'PHRASE', False) else backend.DURATION_MS/1000):
             raise ValueError(f"{path}: incompatible reference/duration")
         sid = reference["session_id"]
         if sid in seen_sessions:
@@ -121,7 +121,7 @@ def load_trials(root, backend=legacy_backend, progress=None, allow_no_none=False
             if len(labels) != 1:
                 raise ValueError(f"{path} trial {tid}: mixed labels")
             trials.append({"key": f"{sid}/{tid}", "session": sid, "user": reference["user_id"],
-                           "label": rows[0]["label"], "quality": quality_check(rows),
+                           "label": rows[0]["label"], "quality": quality_check(rows, reference) if backend.SCHEMA.startswith("sequence-svm-five-flex-") else quality_check(rows),
                            "vector": backend.sequence_vector(rows, reference)})
         sources.extend({"path": str(source.resolve()), "sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
                         "reference_sha256": hashlib.sha256(ref_path.read_bytes()).hexdigest()} for source in paths)
@@ -135,12 +135,24 @@ def load_trials(root, backend=legacy_backend, progress=None, allow_no_none=False
     return trials, sources, skipped
 
 
-def split_trials(trials, seed=42):
+def split_trials(trials, seed=42, test_per_label=None):
     from sklearn.model_selection import GroupShuffleSplit, train_test_split
     labels = np.array([t["label"] for t in trials])
     groups = np.array([t["session"] for t in trials])
     required = set(labels)
     indices = np.arange(len(trials))
+    if test_per_label is not None:
+        if test_per_label < 1:
+            raise ValueError('test-per-label must be positive')
+        rng = np.random.default_rng(seed)
+        held = []
+        for label in sorted(required):
+            candidates = indices[labels == label]
+            if len(candidates) <= test_per_label:
+                raise ValueError(f'{label}: need more than {test_per_label} trials to keep training data')
+            held.extend(rng.choice(candidates, test_per_label, replace=False).tolist())
+        test = np.array(sorted(held), dtype=int)
+        return np.setdiff1d(indices, test), test, 'within_session_trial_holdout'
     if len(set(groups)) >= 2:
         for train, test in GroupShuffleSplit(n_splits=50, test_size=.25, random_state=seed).split(indices, labels, groups):
             if set(labels[train]) == required and set(labels[test]) == required:
@@ -161,12 +173,19 @@ def main(argv=None, backend=legacy_backend):
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--check-only", action="store_true")
     parser.add_argument("--train-all", action="store_true", help="Fit all valid trials without a test split or accuracy evaluation")
+    parser.add_argument('--test-per-label', type=int, help='Hold out exactly this many whole trials per label')
     parser.add_argument("--allow-trial-split", action="store_true", help="V2: allow preliminary same-session demo evaluation")
     parser.add_argument("--allow-no-none", action="store_true", help="Experimental closed-set test: permit training without a rest/background label")
+    parser.add_argument("--classifier", choices=("rbf_svm", "extra_trees"), default="rbf_svm",
+                        help="Classifier for sequence models; extra_trees is available for five-flex U4 testing")
     parser.add_argument("--motion-checks", choices=("classifier-only",) if five else ("strict", "classifier-only"),
                         default="classifier-only" if five else "strict",
                         help="V2: classifier-only learns arbitrary labels without the two-finger motion rules; experimental")
     args = parser.parse_args(argv)
+    if args.train_all and args.test_per_label is not None:
+        parser.error('--train-all cannot be combined with --test-per-label; evaluate separately first')
+    if args.classifier == "extra_trees" and not five:
+        parser.error('--classifier extra_trees is currently supported only for five-flex models')
     progress = TrainingProgress()
     try:
         with progress.stage("Buoc 1/5: Doc, kiem tra du lieu va trich dac trung"):
@@ -178,7 +197,7 @@ def main(argv=None, backend=legacy_backend):
             if args.train_all:
                 train, test, scope = np.arange(len(trials)), np.array([], dtype=int), "full_data_no_test"
             else:
-                train, test, scope = split_trials(trials, args.seed)
+                train, test, scope = split_trials(trials, args.seed, args.test_per_label)
         counts = Counter(t["label"] for t in trials)
         session_counts = {s: dict(Counter(t["label"] for t in trials if t["session"] == s))
                           for s in sorted({t["session"] for t in trials})}
@@ -215,12 +234,21 @@ def main(argv=None, backend=legacy_backend):
         from sklearn.pipeline import make_pipeline
         from sklearn.preprocessing import StandardScaler
         from sklearn.svm import SVC
+        from sklearn.ensemble import ExtraTreesClassifier
         from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_matrix, classification_report
         x = np.stack([t["vector"] for t in trials])
         y = np.array([t["label"] for t in trials])
-        model = make_pipeline(StandardScaler(), SVC(C=1, kernel="rbf", class_weight="balanced"))
-        progress.log("SVM khong cung cap %/epoch trong luc fit; hien thoi gian cho den khi hoan tat.")
-        with progress.stage("Buoc 3/5: Train SVM"):
+        if args.classifier == "extra_trees":
+            model = ExtraTreesClassifier(n_estimators=300, max_features="sqrt",
+                                         class_weight="balanced", random_state=args.seed, n_jobs=-1)
+        else:
+            model = make_pipeline(StandardScaler(), SVC(C=1, kernel="rbf", class_weight="balanced"))
+        classifier_name = type(model).__name__ if args.classifier == "extra_trees" else "StandardScaler+RBF-SVC"
+        if args.classifier == "extra_trees":
+            progress.log("ExtraTrees dang fit tren dac trung chuoi 1.5 giay.")
+        else:
+            progress.log("SVM khong cung cap %/epoch trong luc fit; hien thoi gian cho den khi hoan tat.")
+        with progress.stage(f"Buoc 3/5: Train {classifier_name}"):
             model.fit(x[train], y[train])
         with progress.stage("Buoc 4/5: Bo qua test" if args.train_all else "Buoc 4/5: Du doan tap test"):
             predicted = np.array([], dtype=str) if args.train_all else model.predict(x[test])
@@ -230,6 +258,7 @@ def main(argv=None, backend=legacy_backend):
                                   for i, p in zip(test, predicted)])
         labels = list(model.classes_)
         report = {"evaluation_scope": scope, "warning": warning, "seed": args.seed,
+                  "classifier": classifier_name,
                   "motion_checks": args.motion_checks if (v2 or five) else "legacy",
                   "trial_counts": dict(counts), "session_counts": session_counts,
                   "train_keys": [trials[i]["key"] for i in train],
@@ -247,10 +276,12 @@ def main(argv=None, backend=legacy_backend):
         manifest = {"background_label_present": "NONE" in labels,
                     "schema": backend.SCHEMA, "processor": backend.PROCESSOR, "sample_ms": backend.SAMPLE_MS,
                     "duration_ms": backend.DURATION_MS, "features": list(backend.FEATURES), "labels": labels,
+                    "classifier": classifier_name,
                     "sklearn_version": sklearn.__version__, "evaluation_scope": scope,
                     "model_sha256": hashlib.sha256((output/"model.joblib").read_bytes()).hexdigest(),
                     "input": f"whole {backend.DURATION_MS/1000:g}-second sequence, fixed {len(backend.GRID)}-sample grid; one prediction per trial",
-                    "scaling": "StandardScaler fit only on training trials, per flattened time/feature position"}
+                    "scaling": ("none; ExtraTrees uses raw flattened sequence features" if args.classifier == "extra_trees"
+                                else "StandardScaler fit only on training trials, per flattened time/feature position")}
         if five:
             manifest.update(flex_pins=backend.FLEX_PINS, fingers=backend.FINGERS,
                             csv_columns=list(backend.CSV_COLUMNS))
@@ -260,6 +291,10 @@ def main(argv=None, backend=legacy_backend):
             manifest["preprocessing"] = "3-sample median flex; first 0.5s baseline; 160ms centered dFlex in ADC/s; allow partial flex recovery"
         if five:
             manifest["preprocessing"] = backend.PREPROCESSING
+        if getattr(backend, 'PHRASE', False):
+            manifest['input'] = 'whole phrase; 100Hz real samples; 300 normalized-time feature points'
+            manifest['phrase_seconds'] = sorted({t['quality']['seconds'] for t in trials})
+            manifest['label_seconds'] = {label: sorted({t['quality']['seconds'] for t in trials if t['label']==label}) for label in labels}
         (output/"manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
         (output/"report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
         if not v2 and not five and set(labels) == {"NONE", "NGHIENG_GAP_DUOI"}:

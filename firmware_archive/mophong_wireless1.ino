@@ -9,7 +9,8 @@
 // WIFI LAPTOP HOTSPOT
 // =====================================================
 
-#include "wifi_secrets.h"
+const char* WIFI_NAME = "iphone";
+const char* WIFI_PASSWORD = "12345678a";
 
 // IP cố định của ESP32
 IPAddress LOCAL_IP(192, 168, 137, 115);

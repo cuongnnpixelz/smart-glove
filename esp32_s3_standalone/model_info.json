@@ -1,0 +1,28 @@
+{
+  "source_model": "C:\\Users\\Admin\\Downloads\\newbie4\\SmartSignLanguage\\models\\sequence_5_100hz_U4_U5_U6_14words_extra_trees_20261117_all",
+  "model_sha256": "a864bc88f0384a25decb2f063a8d741641fbd3a0e6bf1ffead6ce607f3741efb",
+  "trees": 300,
+  "nodes": 47966,
+  "classes": [
+    "AN",
+    "BAN",
+    "BUON_BA",
+    "CAM_ON",
+    "CHAO",
+    "DANG_LAM",
+    "DI_DAU",
+    "GI",
+    "KHOE",
+    "NONE",
+    "O_DAU",
+    "TEN",
+    "THICH",
+    "TOI",
+    "TUYET_VOI"
+  ],
+  "features": 2850,
+  "node_bytes": 12,
+  "model_table_bytes": 576192,
+  "conversion": "pure leaf votes, float32 downward thresholds; no retraining",
+  "evaluation_scope": "full_data_no_test"
+}

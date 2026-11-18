@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-18",
+  "board": "ESP32-S3 N16R8",
+  "core": "esp32:esp32 2.0.14",
+  "fqbn": "esp32:esp32:esp32s3:FlashSize=16M,PSRAM=opi,PartitionScheme=app3M_fat9M_16MB,USBMode=hwcdc,CDCOnBoot=default",
+  "program_bytes": 907873,
+  "partition_app_bytes": 3145728,
+  "static_ram_bytes": 116612,
+  "linker_ram_remaining_bytes": 211068,
+  "hardware_flashed": false,
+  "hardware_runtime_measured": false,
+  "artifacts_sha256": {
+    "firmware.ino.bin": "eb8a9ab485980899b3f395edcf596b2eafa974b9466dac56a6ae961a0642e0fe",
+    "firmware.ino.bootloader.bin": "1051ac3e564bb9368a635af94a219d01c6263dc7a89a5e132bd01fef925026a2",
+    "firmware.ino.partitions.bin": "ace02503447d0f470692e65fa76002f2d77a92dc81cd3813d8aa66718d716da9"
+  }
+}

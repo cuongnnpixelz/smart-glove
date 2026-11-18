@@ -18,6 +18,34 @@ from test_five_finger import reference, rows, raw
 
 
 class ComCollectionTests(unittest.TestCase):
+    def test_announced_gyro_range_controls_clipping_without_rescaling_samples(self):
+        from SmartSignLanguage.five_finger import trial_quality
+
+        for gyro in (500, 1000):
+            with self.subTest(gyro=gyro):
+                stream, device = self.open_stream()
+                device.sendall(f"IMU_RANGE,4,{gyro},21\n".encode())
+                self.send(stream, device, [0, 10])
+                self.assertIsNone(stream.error)
+                self.assertEqual(stream.imu_ranges, {"accel_g": 4, "gyro_deg_s": gyro, "dlpf_hz": 21})
+                ref = {"imu_ranges": dict(stream.imu_ranges)}
+                batch = rows()
+                batch[57]["GYRx"] = -8.731
+                if gyro == 500:
+                    with self.assertRaisesRegex(ValueError, "GYRx=-8.731"):
+                        trial_quality(batch, ref)
+                else:
+                    trial_quality(batch, ref)
+                    self.assertEqual(batch[57]["GYRx"], -8.731)
+                    batch[57]["GYRx"] = -17.45
+                    with self.assertRaisesRegex(ValueError, "1000 do/s"):
+                        trial_quality(batch, ref)
+                    batch[57]["GYRx"] = 0
+                    batch[57]["ACCx"] = 39.3
+                    with self.assertRaisesRegex(ValueError, "ACCx"):
+                        trial_quality(batch, ref)
+                stream.close()
+
     def test_serial_handshake_handles_boot_noise_and_split_ack(self):
         port = Mock()
         port.in_waiting = 100

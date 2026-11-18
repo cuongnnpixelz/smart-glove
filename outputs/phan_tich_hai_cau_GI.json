@@ -1,0 +1,653 @@
+{
+  "BAN DANG LAM GI": {
+    "trials": 10,
+    "GI_absent": 8,
+    "exact_by_threshold": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "records": [
+      {
+        "trial": 42,
+        "runs": [
+          [
+            "BAN",
+            7
+          ],
+          [
+            "BUON_BA",
+            7
+          ],
+          [
+            "NONE",
+            1
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ"
+      },
+      {
+        "trial": 43,
+        "runs": [
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            3
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "NONE",
+            2
+          ],
+          [
+            "GI",
+            1
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      },
+      {
+        "trial": 44,
+        "runs": [
+          [
+            "NONE",
+            1
+          ],
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "DANG_LAM",
+            6
+          ],
+          [
+            "BUON_BA",
+            1
+          ]
+        ],
+        "result": "BẠN ĐANG LÀM"
+      },
+      {
+        "trial": 45,
+        "runs": [
+          [
+            "BAN",
+            6
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "DANG_LAM",
+            4
+          ],
+          [
+            "KHOE",
+            3
+          ]
+        ],
+        "result": "BẠN ĐANG LÀM KHỎE"
+      },
+      {
+        "trial": 46,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "DANG_LAM",
+            4
+          ],
+          [
+            "NONE",
+            2
+          ],
+          [
+            "KHOE",
+            1
+          ],
+          [
+            "GI",
+            2
+          ]
+        ],
+        "result": "BẠN ĐANG LÀM"
+      },
+      {
+        "trial": 47,
+        "runs": [
+          [
+            "BAN",
+            6
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            3
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "KHOE",
+            1
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      },
+      {
+        "trial": 48,
+        "runs": [
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            5
+          ],
+          [
+            "BUON_BA",
+            2
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      },
+      {
+        "trial": 50,
+        "runs": [
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            3
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            2
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      },
+      {
+        "trial": 51,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            4
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "NONE",
+            2
+          ],
+          [
+            "KHOE",
+            1
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      },
+      {
+        "trial": 52,
+        "runs": [
+          [
+            "BAN",
+            6
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "DANG_LAM",
+            4
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "NONE",
+            1
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ ĐANG LÀM"
+      }
+    ]
+  },
+  "GI": {
+    "trials": 5,
+    "GI_absent": 0,
+    "exact_by_threshold": {
+      "1": 2,
+      "2": 4,
+      "3": 5
+    },
+    "records": [
+      {
+        "trial": 53,
+        "runs": [
+          [
+            "KHOE",
+            1
+          ],
+          [
+            "GI",
+            14
+          ]
+        ],
+        "result": "GÌ"
+      },
+      {
+        "trial": 54,
+        "runs": [
+          [
+            "GI",
+            15
+          ]
+        ],
+        "result": "GÌ"
+      },
+      {
+        "trial": 55,
+        "runs": [
+          [
+            "NONE",
+            1
+          ],
+          [
+            "KHOE",
+            2
+          ],
+          [
+            "GI",
+            12
+          ]
+        ],
+        "result": "GÌ"
+      },
+      {
+        "trial": 56,
+        "runs": [
+          [
+            "KHOE",
+            1
+          ],
+          [
+            "GI",
+            14
+          ]
+        ],
+        "result": "GÌ"
+      },
+      {
+        "trial": 57,
+        "runs": [
+          [
+            "NONE",
+            4
+          ],
+          [
+            "GI",
+            11
+          ]
+        ],
+        "result": "GÌ"
+      }
+    ]
+  },
+  "BAN TEN GI": {
+    "trials": 10,
+    "GI_absent": 7,
+    "exact_by_threshold": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "records": [
+      {
+        "trial": 69,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "TOI",
+            1
+          ],
+          [
+            "TEN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            1
+          ],
+          [
+            "KHOE",
+            1
+          ]
+        ],
+        "result": "BẠN TÊN"
+      },
+      {
+        "trial": 70,
+        "runs": [
+          [
+            "BAN",
+            2
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "TOI",
+            2
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            2
+          ],
+          [
+            "GI",
+            4
+          ]
+        ],
+        "result": "BUỒN BÃ GÌ"
+      },
+      {
+        "trial": 71,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "TOI",
+            2
+          ],
+          [
+            "TEN",
+            1
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            1
+          ],
+          [
+            "KHOE",
+            1
+          ],
+          [
+            "GI",
+            2
+          ]
+        ],
+        "result": "BẠN"
+      },
+      {
+        "trial": 72,
+        "runs": [
+          [
+            "BAN",
+            6
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "TOI",
+            3
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "KHOE",
+            1
+          ],
+          [
+            "GI",
+            2
+          ]
+        ],
+        "result": "BẠN TÔI"
+      },
+      {
+        "trial": 73,
+        "runs": [
+          [
+            "BAN",
+            6
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "TOI",
+            6
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "KHOE",
+            1
+          ]
+        ],
+        "result": "BẠN TÔI"
+      },
+      {
+        "trial": 74,
+        "runs": [
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "TOI",
+            6
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "NONE",
+            2
+          ]
+        ],
+        "result": "BẠN TÔI"
+      },
+      {
+        "trial": 75,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "TOI",
+            2
+          ],
+          [
+            "TEN",
+            2
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            3
+          ]
+        ],
+        "result": "BẠN"
+      },
+      {
+        "trial": 76,
+        "runs": [
+          [
+            "NONE",
+            3
+          ],
+          [
+            "BAN",
+            5
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "TOI",
+            6
+          ]
+        ],
+        "result": "BẠN TÔI"
+      },
+      {
+        "trial": 77,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            3
+          ],
+          [
+            "TEN",
+            5
+          ],
+          [
+            "BUON_BA",
+            1
+          ],
+          [
+            "NONE",
+            2
+          ]
+        ],
+        "result": "BẠN BUỒN BÃ TÊN"
+      },
+      {
+        "trial": 78,
+        "runs": [
+          [
+            "BAN",
+            4
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "TOI",
+            2
+          ],
+          [
+            "TEN",
+            1
+          ],
+          [
+            "BUON_BA",
+            2
+          ],
+          [
+            "NONE",
+            4
+          ]
+        ],
+        "result": "BẠN"
+      }
+    ]
+  }
+}

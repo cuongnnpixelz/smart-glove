@@ -34,7 +34,7 @@ def sequence_vector(rows, reference):
     legacy.validate_imu_reference(reference)
     if reference.get("processor") != PROCESSOR:
         raise ValueError("IMU processor version mismatch")
-    trial_quality(rows)
+    trial_quality(rows, reference)
     t = np.array([r["timestamp"] for r in rows], dtype=float)
     t -= t[0]
     columns = (*FLEX_COLUMNS, "ACCx", "ACCy", "ACCz", "GYRx", "GYRy", "GYRz", *legacy.BODY_COLUMNS)

@@ -1,0 +1,5535 @@
+{
+  "schema": "causal-gru-ctc-five-flex-v1",
+  "best_epoch": 65,
+  "train_trials": 200,
+  "validation_sessions": [
+    "20261111T065341Z_0c930f2a"
+  ],
+  "test_sessions": [
+    "20261105T090338Z_5c1463ca",
+    "20261109T095855Z_f0b06c25",
+    "20261111T070400Z_a5d293b4"
+  ],
+  "validation": {
+    "trials": 60,
+    "exact": 40,
+    "substitutions_deletions_insertions": [
+      3,
+      8,
+      9
+    ],
+    "reference_words": 50,
+    "wer": 0.4,
+    "predictions": [
+      {
+        "key": "20261111T065341Z_0c930f2a/1",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/2",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/3",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/4",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/5",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/6",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/7",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/8",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/9",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/10",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/11",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/12",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/13",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/14",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/15",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/16",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/17",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/18",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/19",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/20",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/21",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/22",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/23",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/24",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/25",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/26",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/27",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/28",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/29",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/30",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/31",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/32",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/33",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/34",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/35",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/36",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/37",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/38",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/39",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/40",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/41",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/42",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/43",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/44",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/45",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/46",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/47",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/48",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/49",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/50",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/51",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/52",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/53",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/54",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/55",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/56",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/57",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/58",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/59",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T065341Z_0c930f2a/60",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "test": {
+    "trials": 81,
+    "exact": 45,
+    "substitutions_deletions_insertions": [
+      5,
+      38,
+      1
+    ],
+    "reference_words": 90,
+    "wer": 0.4888888888888889,
+    "predictions": [
+      {
+        "key": "20261105T090338Z_5c1463ca/1",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/2",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/3",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/4",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/5",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/6",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/7",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/8",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/9",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/10",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/11",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/12",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/13",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/14",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/15",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/16",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/17",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/18",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/19",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T090338Z_5c1463ca/20",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261109T095855Z_f0b06c25/1",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/1",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/2",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/3",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/4",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/5",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/6",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/7",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/8",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/9",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/10",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/11",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/12",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/13",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/14",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/15",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/16",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/17",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/18",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/19",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/20",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/21",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/22",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/23",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/24",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/25",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/26",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/27",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/28",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/29",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/30",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/31",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/32",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/33",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/34",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/35",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/36",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/37",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/38",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/39",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/40",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/41",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/42",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/43",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/44",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/45",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/46",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/47",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/48",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/49",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/50",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/51",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/52",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/53",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/54",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/55",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/56",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/57",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/58",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/59",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T070400Z_a5d293b4/60",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "train_diagnostic": {
+    "trials": 200,
+    "exact": 144,
+    "substitutions_deletions_insertions": [
+      19,
+      35,
+      9
+    ],
+    "reference_words": 240,
+    "wer": 0.2625,
+    "predictions": [
+      {
+        "key": "20261111T062558Z_234e2dfd/16",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/46",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/21",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/9",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/27",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/46",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/28",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/22",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/37",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/35",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/15",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/6",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/54",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/8",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/40",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/19",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/42",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/1",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/51",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/32",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/33",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/31",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/50",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/58",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/41",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/44",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/10",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/2",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/18",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/6",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/18",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/15",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/18",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/43",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/41",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/9",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/24",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/55",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/44",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/53",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/13",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/12",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/27",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/50",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/46",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/28",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/56",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/1",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/48",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/55",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/11",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/39",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/19",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/21",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/36",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/29",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/49",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/59",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/50",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/8",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/12",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/58",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/47",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/3",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/5",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/3",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/54",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/20",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/43",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/39",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/47",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/16",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/34",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/11",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/58",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/25",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/13",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/9",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/57",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/14",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/41",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/34",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/43",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/28",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/14",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/54",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/60",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/60",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/12",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/52",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/35",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/22",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/51",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/4",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/2",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/10",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/53",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/24",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/38",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/15",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/57",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/32",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/6",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/4",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/7",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/60",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/56",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/45",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/39",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/5",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/17",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/57",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/41",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/13",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/25",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/37",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/42",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/59",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/49",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/40",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/47",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/59",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/30",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/27",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/11",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/53",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/30",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/55",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/38",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/20",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/44",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/23",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/5",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/32",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/55",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/60",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/50",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/29",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/54",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/34",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/51",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/42",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/51",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/19",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/2",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/14",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/10",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/44",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/42",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/40",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/47",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/4",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/52",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/21",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/45",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/17",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/33",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/36",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/49",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/57",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/43",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/59",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/45",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/16",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/26",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/1",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/49",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/20",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/52",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/48",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/29",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/7",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/17",
+        "kind": "isolated",
+        "expected": [
+          "KHOE"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/30",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/31",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/3",
+        "kind": "isolated",
+        "expected": [
+          "TOI"
+        ],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/23",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/8",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/38",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [],
+        "errors": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/36",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/53",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/56",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [
+          "TOI"
+        ],
+        "errors": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/46",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/45",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/58",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/37",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/22",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T054343Z_91509454/7",
+        "kind": "continuous",
+        "expected": [
+          "TOI",
+          "CAM_ON",
+          "BAN"
+        ],
+        "predicted": [
+          "BAN",
+          "CAM_ON",
+          "BAN"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/23",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/31",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261105T074156Z_804aa271/26",
+        "kind": "continuous",
+        "expected": [
+          "BAN",
+          "KHOE"
+        ],
+        "predicted": [
+          "TOI",
+          "KHOE"
+        ],
+        "errors": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/24",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/35",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/25",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/52",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/33",
+        "kind": "isolated",
+        "expected": [
+          "BAN"
+        ],
+        "predicted": [
+          "BAN"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T062558Z_234e2dfd/56",
+        "kind": "isolated",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261104T062133Z_8af3f63c/48",
+        "kind": "continuous",
+        "expected": [],
+        "predicted": [],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/26",
+        "kind": "isolated",
+        "expected": [
+          "CAM_ON"
+        ],
+        "predicted": [
+          "CAM_ON"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "20261111T064218Z_8297407a/48",
+        "kind": "isolated",
+        "expected": [
+          "CHAO"
+        ],
+        "predicted": [
+          "CHAO"
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 60.47810406155057,
+      "validation_wer": 0.78
+    },
+    {
+      "epoch": 2,
+      "loss": 48.165412478976776,
+      "validation_wer": 0.72
+    },
+    {
+      "epoch": 3,
+      "loss": 29.70172182718913,
+      "validation_wer": 0.84
+    },
+    {
+      "epoch": 4,
+      "loss": 9.674642642339071,
+      "validation_wer": 0.94
+    },
+    {
+      "epoch": 5,
+      "loss": 2.7597676383124456,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 6,
+      "loss": 2.118185944027371,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 7,
+      "loss": 2.0490287277433605,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 8,
+      "loss": 2.030810276667277,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 9,
+      "loss": 2.020489772160848,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 10,
+      "loss": 1.962295479244656,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 11,
+      "loss": 1.948123362329271,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": 1.9429075717926025,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": 1.9367394977145724,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 14,
+      "loss": 1.9249732891718547,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 15,
+      "loss": 1.9091974099477131,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 16,
+      "loss": 1.9079795281092327,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 17,
+      "loss": 1.886463655365838,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 18,
+      "loss": 1.8727552228503757,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 19,
+      "loss": 1.8623280657662287,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 20,
+      "loss": 1.8339091671837702,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 21,
+      "loss": 1.8151066700617473,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 22,
+      "loss": 1.7967796987957425,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 23,
+      "loss": 1.7656059397591486,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 24,
+      "loss": 1.7634072966045804,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 25,
+      "loss": 1.7099869118796454,
+      "validation_wer": 1.0
+    },
+    {
+      "epoch": 26,
+      "loss": 1.6960442860921223,
+      "validation_wer": 0.98
+    },
+    {
+      "epoch": 27,
+      "loss": 1.6655845377180312,
+      "validation_wer": 0.94
+    },
+    {
+      "epoch": 28,
+      "loss": 1.603112565146552,
+      "validation_wer": 0.88
+    },
+    {
+      "epoch": 29,
+      "loss": 1.592757715119256,
+      "validation_wer": 0.82
+    },
+    {
+      "epoch": 30,
+      "loss": 1.5792679124408298,
+      "validation_wer": 0.84
+    },
+    {
+      "epoch": 31,
+      "loss": 1.5231388145022922,
+      "validation_wer": 0.84
+    },
+    {
+      "epoch": 32,
+      "loss": 1.49121802382999,
+      "validation_wer": 0.82
+    },
+    {
+      "epoch": 33,
+      "loss": 1.4505751927693684,
+      "validation_wer": 0.8
+    },
+    {
+      "epoch": 34,
+      "loss": 1.4237944549984403,
+      "validation_wer": 0.76
+    },
+    {
+      "epoch": 35,
+      "loss": 1.3834553824530706,
+      "validation_wer": 0.78
+    },
+    {
+      "epoch": 36,
+      "loss": 1.3606550296147664,
+      "validation_wer": 0.76
+    },
+    {
+      "epoch": 37,
+      "loss": 1.298378136422899,
+      "validation_wer": 0.76
+    },
+    {
+      "epoch": 38,
+      "loss": 1.2481962309943304,
+      "validation_wer": 0.74
+    },
+    {
+      "epoch": 39,
+      "loss": 1.2492092318005033,
+      "validation_wer": 0.72
+    },
+    {
+      "epoch": 40,
+      "loss": 1.2175331910451253,
+      "validation_wer": 0.68
+    },
+    {
+      "epoch": 41,
+      "loss": 1.2223133775922987,
+      "validation_wer": 0.64
+    },
+    {
+      "epoch": 42,
+      "loss": 1.1839254564709134,
+      "validation_wer": 0.6
+    },
+    {
+      "epoch": 43,
+      "loss": 1.0901204877429538,
+      "validation_wer": 0.62
+    },
+    {
+      "epoch": 44,
+      "loss": 1.0795739359325833,
+      "validation_wer": 0.64
+    },
+    {
+      "epoch": 45,
+      "loss": 1.0202061269018385,
+      "validation_wer": 0.6
+    },
+    {
+      "epoch": 46,
+      "loss": 1.0168655912081401,
+      "validation_wer": 0.54
+    },
+    {
+      "epoch": 47,
+      "loss": 0.9572848876317342,
+      "validation_wer": 0.56
+    },
+    {
+      "epoch": 48,
+      "loss": 0.9387753274705675,
+      "validation_wer": 0.54
+    },
+    {
+      "epoch": 49,
+      "loss": 0.915945205423567,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 50,
+      "loss": 0.8642153408792284,
+      "validation_wer": 0.48
+    },
+    {
+      "epoch": 51,
+      "loss": 0.8511167102389865,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 52,
+      "loss": 0.7961388991938697,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 53,
+      "loss": 0.8248338434431288,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 54,
+      "loss": 0.768799536757999,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 55,
+      "loss": 0.7593209544817606,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 56,
+      "loss": 0.7215122116936578,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 57,
+      "loss": 0.7230272690455118,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 58,
+      "loss": 0.6974134544531504,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 59,
+      "loss": 0.6740357809596591,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 60,
+      "loss": 0.6555213133494059,
+      "validation_wer": 0.46
+    },
+    {
+      "epoch": 61,
+      "loss": 0.651562942398919,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 62,
+      "loss": 0.6379099620713128,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 63,
+      "loss": 0.6631870799594455,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 64,
+      "loss": 0.5936863422393799,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 65,
+      "loss": 0.5870217449135251,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 66,
+      "loss": 0.5797173645761278,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 67,
+      "loss": 0.5608194867769877,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 68,
+      "loss": 0.5453851024309794,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 69,
+      "loss": 0.5463763409190707,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 70,
+      "loss": 0.56137372718917,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 71,
+      "loss": 0.5357611808511946,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 72,
+      "loss": 0.5168564087814755,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 73,
+      "loss": 0.49989771677388084,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 74,
+      "loss": 0.5015012820561727,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 75,
+      "loss": 0.4743077490064833,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 76,
+      "loss": 0.49004213015238446,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 77,
+      "loss": 0.5064312782552507,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 78,
+      "loss": 0.46436232990688747,
+      "validation_wer": 0.44
+    },
+    {
+      "epoch": 79,
+      "loss": 0.48790127370092606,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 80,
+      "loss": 0.43632812632454765,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 81,
+      "loss": 0.430924438767963,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 82,
+      "loss": 0.4389930135673947,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 83,
+      "loss": 0.4209378312031428,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 84,
+      "loss": 0.4164782828754849,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 85,
+      "loss": 0.4384155372778575,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 86,
+      "loss": 0.41533994012408787,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 87,
+      "loss": 0.4004027330213123,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 88,
+      "loss": 0.42756903502676225,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 89,
+      "loss": 0.4066746201780107,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 90,
+      "loss": 0.39804119368394214,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 91,
+      "loss": 0.36475811070866054,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 92,
+      "loss": 0.3998689353466034,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 93,
+      "loss": 0.3760625587569343,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 94,
+      "loss": 0.35373927818404305,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 95,
+      "loss": 0.36453694105148315,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 96,
+      "loss": 0.3588412387503518,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 97,
+      "loss": 0.3747232258319855,
+      "validation_wer": 0.42
+    },
+    {
+      "epoch": 98,
+      "loss": 0.3534347299072478,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 99,
+      "loss": 0.3622175057729085,
+      "validation_wer": 0.4
+    },
+    {
+      "epoch": 100,
+      "loss": 0.3231634199619293,
+      "validation_wer": 0.42
+    }
+  ],
+  "limitations": [
+    "Experimental, not validated live; no automatic sentence endpoint implemented.",
+    "Validation contains isolated words only; continuous test contains TOI KHOE and one NONE only.",
+    "Other continuous phrases have only one session; no independent test for them.",
+    "No test of unseen word combinations; no inference-time phrase whitelist."
+  ],
+  "dataset_sha256": "e6d82dc8e24950b3b912fae4787ee1417d1ced3dc9def098121eb6ecfb0e9b92"
+}

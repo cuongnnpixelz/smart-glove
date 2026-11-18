@@ -23,7 +23,22 @@ def quality_report(rows):
     return timing_report(rows, sample_ms=SAMPLE_MS, max_gap_ms=20)
 
 
-def trial_quality(rows):
+def check_imu_range(values, reference=None):
+    ranges = (reference or {}).get('imu_ranges', {})
+    accel = ranges.get('accel_g', 2)
+    gyro = ranges.get('gyro_deg_s', 250)
+    if (accel, gyro) not in ((2, 250), (4, 500), (4, 1000)):
+        raise ValueError('Cau hinh pham vi MPU khong duoc ho tro')
+    for start, stop, threshold, unit in ((5, 8, 19.5*accel/2, 'm/s2'), (8, 11, 4.34*gyro/250, 'rad/s')):
+        hits = np.argwhere(np.abs(values[:, start:stop]) >= threshold)
+        if len(hits):
+            row, col = hits[0]
+            key = RAW_COLUMNS[start+col]
+            raise ValueError(f'MPU gan cham gioi han +/-{accel}g hoac +/-{gyro} do/s; '
+                             f'{key}={values[row,start+col]:.3f} {unit}, mau {row+1}; lam nhe hon/kiem tra cam bien')
+
+
+def trial_quality(rows, reference=None):
     quality = quality_report(rows)
     # 150 readings at t=0..1490 ms describe a nominal 1.5-second record.
     if len(rows) != SAMPLE_COUNT or not 1490 <= quality["duration_ms"] <= 1510:
@@ -45,8 +60,7 @@ def trial_quality(rows):
                                f"{len(indices)}/{len(rows)} mau loi; "
                                f"mau {first+1}, ADC={values[first, i]:g}, timestamp={rows[first]['timestamp']}")
         raise ValueError("Flex ADC sat bien (<=8 hoac >=4087): " + " | ".join(details))
-    if np.any(np.abs(values[:, 5:8]) >= 19.5) or np.any(np.abs(values[:, 8:11]) >= 4.34):
-        raise ValueError("MPU gan cham gioi han +/-2g hoac +/-250 do/s; lam cu chi nhe hon va thu lai")
+    check_imu_range(values, reference)
     return quality
 
 

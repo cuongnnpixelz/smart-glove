@@ -1,0 +1,10 @@
+{
+  "trials": 642,
+  "model_label_mismatches": [],
+  "feature_windows": 642,
+  "feature_max_absolute_error": 1.3877787807814457e-17,
+  "feature_label_mismatches": 0,
+  "imu_max_absolute_error": 1.0658141036401503e-14,
+  "sentence_cases": 2001,
+  "scope": "Host C++ equivalence only. Not S3 hardware or independent accuracy evaluation."
+}

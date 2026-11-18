@@ -37,6 +37,7 @@ class SampleStream:
         if sample_ms not in (10, 40) or (sample_ms == 10 and flex_count != 5):
             raise ValueError("100 Hz requires five-channel firmware")
         self.sample_ms = sample_ms
+        self.imu_ranges = {"accel_g": 2, "gyro_deg_s": 250, "dlpf_hz": 21}
         self.protocol = "RAW5_100" if sample_ms == 10 else "RAW5" if flex_count == 5 else "RAW2"
         self.sock = sock
         sock.settimeout(.25)
@@ -51,6 +52,7 @@ class SampleStream:
         self.last_stamp = None
         self.serial = 0
         self.begin_serial = None
+        self.audio_messages = deque(maxlen=64)
         sock.sendall((self.protocol + "\n").encode("ascii"))
         self.thread = threading.Thread(target=self._read, daemon=True)
         self.thread.start()
@@ -67,7 +69,7 @@ class SampleStream:
                     chunk = self.sock.recv(4096)
                 except socket.timeout:
                     if time.monotonic()-last > 3:
-                        raise ValueError(f"Khong co {self.protocol} moi. Nap firmware moi va kiem tra ket noi.")
+                        raise ValueError(f"Khong co {self.protocol} moi trong 3 giay. Kiem tra cap USB/nguon/ket noi; chua du bang chung firmware cu.")
                     continue
                 if not chunk:
                     raise ValueError("ESP32 ngat ket noi; phien thu da dung")
@@ -76,6 +78,15 @@ class SampleStream:
                     raise ValueError("Sensor line too long")
                 while b"\n" in pending:
                     line, pending = pending.split(b"\n",1)
+                    if line.startswith(b"AUDIO_"):
+                        with self.condition:
+                            self.audio_messages.append(line.strip().decode("ascii", errors="replace"))
+                            self.condition.notify_all()
+                        continue
+                    if line.strip() in (b"IMU_RANGE,4,500,21", b"IMU_RANGE,4,1000,21"):
+                        # Use the hardware's announcement, never widen old data's limits.
+                        self.imu_ranges = {"accel_g": 4, "gyro_deg_s": int(line.strip().split(b",")[2]), "dlpf_hz": 21}
+                        continue
                     if line.strip() == b"BEGIN":
                         with self.condition:
                             if self.begin_serial == -1:
@@ -144,6 +155,26 @@ class SampleStream:
         with self.condition:
             self.processor = SensorProcessor(calibration)
             self.rows.clear()
+
+    def wait_audio(self, expected, timeout=3.0):
+        """One reader owns COM; audio acknowledgements never become sensor rows."""
+        deadline = time.monotonic() + timeout
+        with self.condition:
+            while True:
+                if self.error:
+                    raise self.error
+                if self.closed.is_set():
+                    raise OSError("COM da dong khi phat am thanh")
+                while self.audio_messages:
+                    message = self.audio_messages.popleft()
+                    if message == expected:
+                        return message
+                    if message.startswith("AUDIO_ERROR,"):
+                        raise ValueError(message)
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError(f"Khong nhan {expected}; kiem tra firmware MAX98357A")
+                self.condition.wait(remaining)
 
     def check_ready(self):
         """Check fresh samples and timing before asking the wearer to perform."""
